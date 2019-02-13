@@ -1,4 +1,5 @@
 var mysql = require('mysql');
+const Division = require('../models/divisions');
 
 var connection = mysql.createConnection({
     host: process.env.MYSQL_SERVER,
@@ -84,6 +85,7 @@ generateSchemas = () => {
 }
 
 module.exports = {
+    connection,
     open,
     close,
     generateSchemas,

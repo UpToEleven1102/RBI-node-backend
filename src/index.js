@@ -1,27 +1,41 @@
 require('dotenv').config();
 
+const Division = require('./models/divisions');
+const Player = require('./models/players');
+const Team = require('./models/teams');
+
 var db = require('./db/index');
+
+const faker = require('faker');
 
 var express = require('express');
 
 var app = express();
 
+//db config
 db.open();
-
 db.generateSchemas();
 
-db.close();
+
+function seedData(){
+    for (var i = 0; i<10; i++) {
+        Division.createDivision({name: faker.name.findName()});
+    }
+};
+
+
+seedData();
 
 app.get('/divisions', function(req,res){
-    res.json({data: [{id: 0, name: "division 1"}]});
+    Division.getDivisions((data) => res.json({success: true, data: data}));
 });
 
 app.get('/players', function(req, res) {
-    res.json({data: [{id: 0, name: "player 1"}]});
+    Player.getPlayers(data => res.json({success: true, data: data}) );
 });
 
 app.get('/teams', function(req, res) {
-    res.json({data: [{id: 0, name: "team A"}]});
+    Team.getTeams(data => res.json({success: true, data: data}));
 });
 
 app.get('*', function(req,res){
@@ -31,4 +45,5 @@ app.get('*', function(req,res){
 app.listen(8080, function(){
     console.log('listening on port 8080');
 })
+
 
