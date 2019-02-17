@@ -1,8 +1,8 @@
 require('dotenv').config();
 
-const Division = require('./models/divisions');
-const Player = require('./models/players');
-const Team = require('./models/teams');
+const Conference = require('./models/conference');
+const Player = require('./models/player');
+const Team = require('./models/team');
 
 var db = require('./db/index');
 
@@ -19,15 +19,15 @@ db.generateSchemas();
 
 function seedData(){
     for (var i = 0; i<10; i++) {
-        Division.createDivision({name: faker.name.findName()});
+        Conference.createConference({name: faker.name.findName(), member_number: faker.random.number()});
     }
 };
 
 
 seedData();
 
-app.get('/divisions', function(req,res){
-    Division.getDivisions((data) => res.json({success: true, data: data}));
+app.get('/conferences', function(req,res){
+    Conference.getConferences((data) => res.json({success: true, data: data}));
 });
 
 app.get('/players', function(req, res) {

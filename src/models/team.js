@@ -2,7 +2,7 @@ const connection = require('../db/index').connection;
 
 
 createTeam = data => {
-    var sql = `INSERT INTO divisions (name) VALUES ('${data.name}')`;
+    var sql = `INSERT INTO team (name) VALUES ('${data.name}')`;
 
     connection.query(sql, function (err, result) {
         if (err) throw err;
@@ -11,7 +11,7 @@ createTeam = data => {
 }
 
 getTeams = (success) => {
-    var sql = `SELECT * FROM teams;`;
+    var sql = `SELECT * FROM team;`;
     connection.query(sql, function(err, result){
         if(err) throw err;
         success(result);

@@ -1,5 +1,5 @@
 var mysql = require('mysql');
-const Division = require('../models/divisions');
+const Division = require('../models/conference');
 
 var connection = mysql.createConnection({
     host: process.env.MYSQL_SERVER,
@@ -22,66 +22,61 @@ const close = () => {
     connection.end();
 }
 
+dropTable = (table_name) => {
+    connection.query(`DROP TABLE IF EXISTS ${table_name}`, function (err, result) {
+        if (err) throw err;
+        console.log(`dropped table ${table_name}`);
+    })
+}
+
+createTable = (tableSchema, tableName) => {
+    connection.query(tableSchema, function (err, result) {
+        if (err) throw err;
+        console.log(`Table ${tableName} created`);
+    });
+}
+
 generateSchemas = () => {
-    var divisionsSchema = `CREATE TABLE divisions (
+    var divisionsSchema = `CREATE TABLE conference (
         id INT AUTO_INCREMENT PRIMARY KEY, 
-        name VARCHAR(64));`;
-    var teamsSchema = `CREATE TABLE teams (
+        name VARCHAR(64),
+        member_number INT
+        );`;
+    var teamsSchema = `CREATE TABLE team (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(64) NOT NULL,
-        coach VARCHAR(64) NULL,
-        division_id INT,
-        FOREIGN KEY (division_id)
-            REFERENCES divisions(id)
+        university_name VARCHAR(64) NULL,
+        conference_id INT,
+        FOREIGN KEY (conference_id)
+            REFERENCES conference(id)
             ON DELETE CASCADE
             ON UPDATE CASCADE
         );`;
 
-    var playersSchema = `CREATE TABLE players (
+    var playersSchema = `CREATE TABLE player (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(64) NOT NULL,
         team_id INT,
         rush_yds FLOAT,
+        rush_attempt INT,
         rec_yds FLOAT,
         catches INT,
         rush_td FLOAT,
         rec_td FLOAT,
         fumbles FLOAT,
         FOREIGN KEY (team_id)
-            REFERENCES teams(id)
+            REFERENCES team(id)
             ON DELETE CASCADE
             ON UPDATE CASCADE
     );`;
 
-    connection.query(`DROP TABLE IF EXISTS players`, function (err, result) {
-        if (err) throw err;
-        console.log("dropped table players");
-    })
+    dropTable('player');
+    dropTable('team');
+    dropTable('conference');
 
-    connection.query(`DROP TABLE IF EXISTS teams`, function (err, result) {
-        if (err) throw err;
-        console.log("dropped table teams");
-    })
-
-    connection.query(`DROP TABLE IF EXISTS divisions`, function (err, result) {
-        if (err) throw err;
-        console.log("dropped table divisions");
-    })
-
-    connection.query(divisionsSchema, function (err, result) {
-        if (err) throw err;
-        console.log("Table divisions created");
-    });
-
-    connection.query(teamsSchema, function (err, result) {
-        if (err) throw err;
-        console.log("Table teams created");
-    });
-
-    connection.query(playersSchema, function (err, result) {
-        if (err) throw err;
-        console.log("Table players created");
-    });
+    createTable(divisionsSchema, 'conference');
+    createTable(teamsSchema, 'team');
+    createTable(playersSchema, 'player');
 }
 
 module.exports = {

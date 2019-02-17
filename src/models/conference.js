@@ -1,7 +1,7 @@
 const connection = require('../db/index').connection;
 
-const createDivision = (data) => {
-    var sql = `INSERT INTO divisions (name) VALUES ('${data.name}')`;
+const createConference = (data) => {
+    var sql = `INSERT INTO conference (name, member_number) VALUES ('${data.name}', '${data.member_number}')`;
 
     connection.query(sql, function (err, result) {
         if (err) throw err;
@@ -9,16 +9,16 @@ const createDivision = (data) => {
     });
 }
 
-const getDivisions = (success) => {
-    var sql = `SELECT id, name FROM divisions;`;
+const getConferences = (success) => {
+    var sql = `SELECT id, name, member_number FROM conference;`;
     connection.query(sql, function(err, result){
         if(err) throw err;
         success(result);
     })
 }
 
-const getDivisionById = (id) => {
-    var sql = `SELECT id, name FROM divisions WHERE id=${id};`;
+const getConferenceById = (id) => {
+    var sql = `SELECT id, name FROM conference WHERE id=${id};`;
 
     connection.query(sql, function(err, result) {
         if(err) throw err;
@@ -27,7 +27,7 @@ const getDivisionById = (id) => {
 }
 
 module.exports = {
-    createDivision,
-    getDivisions,
-    getDivisionById,
+    createConference,
+    getConferenceById,
+    getConferences,
 }
