@@ -12,7 +12,7 @@ createPlayer = data => {
     })
 };
 
-getPlayers = (success) => {
+getPlayers = async (success) => {
     var sql = `SELECT * FROM player;`;
     connection.query(sql, function(err, result){
         if(err) throw err;

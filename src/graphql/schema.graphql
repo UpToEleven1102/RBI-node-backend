@@ -1,0 +1,34 @@
+type Conference {
+    id: ID!
+    name: String!
+    member_number: Int!
+}
+
+type Team {
+    id: ID!
+    name: String!
+    university_name: String!
+    conference: Conference!
+}
+
+type Player {
+    id: ID!
+    name: String!
+    team: Team!
+    rush_yds: Float
+    rush_attempt: Int
+    rec_yds: Float
+    catches: Int
+    rush_td: Float
+    rec_td: Float
+    fumbles: Float
+}
+
+type Query {
+    conferences: [Conference!]!
+    conference(id: ID): Conference!
+    teams: [Team!]!
+    team(id: ID): Team!
+    players: [Player!]!
+    player(id: ID): Player
+}
