@@ -11,16 +11,29 @@ createTeam = data => {
     });
 }
 
-getTeams = async (success) => {
-    var sql = `SELECT * FROM team;`;
-    connection.query(sql, function(err, result){
-        if(err) throw err;
-        success(result);
-    })
+getTeams = async () => {
+    return new Promise(function(resolve, reject){
+        const sql = `SELECT * FROM team;`;
+        connection.query(sql, function(err, result){
+            if(err)
+                reject(err);
+            resolve(result);
+        })
+    });
 }
+
+getTeamById = (id) => new Promise(function(resolve, reject){
+   const sql = `SELECT * FROM team WHERE id=${id};`
+    connection.query(sql, function(err, result) {
+        if (err)
+            reject(err);
+        resolve(result);
+    })
+});
 
 module.exports = {
     createTeam,
-    getTeams
+    getTeams,
+    getTeamById
 }
 

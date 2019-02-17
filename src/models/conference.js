@@ -21,12 +21,16 @@ const getConferences = () => {
 }
 
 const getConferenceById = async (id) => {
-    var sql = `SELECT id, name FROM conference WHERE id=${id};`;
+    return new Promise(function(resolve, reject){
+        const sql = `SELECT * FROM conference WHERE id=${id};`;
 
-    connection.query(sql, function(err, result) {
-        if(err) throw err;
-        console.log(result);
+        connection.query(sql, function(err, result) {
+            if(err)
+                reject(err);
+            resolve(result);
+        })
     })
+
 }
 
 module.exports = {
