@@ -12,16 +12,28 @@ createPlayer = data => {
     })
 };
 
-getPlayers = async (success) => {
-    var sql = `SELECT * FROM player;`;
+getPlayers = () => new Promise(function(resolve, reject){
+    const sql = `SELECT * FROM player;`;
     connection.query(sql, function(err, result){
-        if(err) throw err;
-        success(result);
-    })
-}
+        if(err)
+            reject(err);
+        resolve(result);
+    });
+});
+
+getPlayerById = id => new Promise(function(resolve, reject){
+    const sql = `SELECT * FROM player WHERE id=${id};`;
+
+    connection.query(sql, function(err, result){
+       if(err)
+           reject(err);
+       resolve(result);
+    });
+});
 
 module.exports = {
     createPlayer,
-    getPlayers
+    getPlayers,
+    getPlayerById
 }
 
