@@ -14,17 +14,38 @@ var app = express();
 
 //db config
 db.open();
-db.generateSchemas();
+// db.generateSchemas();
 
 
 function seedData(){
-    for (var i = 0; i<10; i++) {
+    // for (var i = 0; i<10; i++) {
+    //     Conference.createConference({name: faker.name.findName(), member_number: faker.random.number()});
+    // }
+
+    for (let i=0; i<10; i++) {
         Conference.createConference({name: faker.name.findName(), member_number: faker.random.number()});
+        for (let j=0; j<10; j++) {
+            Team.createTeam({name: faker.random.word(), university_name: faker.random.word(), conference_id: i+1});
+            for (let k=0; k<10; k++) {
+                //    (name, team_id, rush_yds, rush_attempt, rec_yds, catches, rush_td, rec_td, fumbles)
+                Player.createPlayer({
+                    name: faker.random.word(),
+                    team_id: j+1,
+                    rush_yds: faker.random.number(),
+                    rush_attempt: faker.random.number(),
+                    rec_yds: faker.random.number(),
+                    catches: faker.random.number(),
+                    rush_td: faker.random.number(),
+                    rec_td: faker.random.number(),
+                    fumbles: faker.random.number(),
+                })
+            }
+        }
     }
 };
 
 
-seedData();
+// seedData();
 
 app.get('/conferences', function(req,res){
     Conference.getConferences((data) => res.json({success: true, data: data}));
