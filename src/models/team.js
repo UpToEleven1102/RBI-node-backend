@@ -11,7 +11,7 @@ createTeam = data => {
     });
 }
 
-getTeams = (success) => {
+getTeams = async (success) => {
     var sql = `SELECT * FROM team;`;
     connection.query(sql, function(err, result){
         if(err) throw err;
