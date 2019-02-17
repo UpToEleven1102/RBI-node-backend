@@ -23,7 +23,6 @@ getPlayers = () => new Promise(function(resolve, reject){
 
 getPlayerById = id => new Promise(function(resolve, reject){
     const sql = `SELECT * FROM player WHERE id=${id};`;
-
     connection.query(sql, function(err, result){
        if(err)
            reject(err);
