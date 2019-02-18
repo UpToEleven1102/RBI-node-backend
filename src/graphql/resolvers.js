@@ -22,13 +22,19 @@ module.exports = resolvers = {
             return team[0];
         },
         players: async (root, args, context) => {
-            const players = await context.Player.getPlayers();
+            // const rowNum = await context.Player.getRowNum();
+            // console.log(rowNum);
+
+
+            const players = await context.Player.getPlayers(args.total, args.page, args.filter);
             for (let i=0; i< players.length; i++) {
                 const team =await context.Team.getTeamById(players[i].team_id);
                 const conference = await context.Conference.getConferenceById(team[0].conference_id);
                 team[0].conference = conference[0];
                 players[i].team = team[0];
             }
+
+            console.log(players);
 
             return players;
         },

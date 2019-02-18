@@ -12,8 +12,22 @@ createPlayer = data => {
     })
 };
 
-getPlayers = () => new Promise(function(resolve, reject){
-    const sql = `SELECT * FROM player;`;
+getRowNum = () => {
+    return new Promise(function(resolve, reject){
+       const sql = `SELECT COUNT(*) as rows FROM player;`;
+
+       connection.query(sql, function (err, result){
+           if(err)
+               reject(err);
+           resolve(result[0]);
+       })
+    });
+}
+
+getPlayers = (total = 10, page = 1, filter = '') => new Promise(function(resolve, reject){
+    const begin = (page-1)*total;
+
+    const sql = `SELECT * FROM player WHERE INSTR(name,'${filter}') > 0 LIMIT ${begin},${total};`;
     connection.query(sql, function(err, result){
         if(err)
             reject(err);
@@ -33,6 +47,7 @@ getPlayerById = id => new Promise(function(resolve, reject){
 module.exports = {
     createPlayer,
     getPlayers,
-    getPlayerById
+    getRowNum,
+    getPlayerById,
 }
 

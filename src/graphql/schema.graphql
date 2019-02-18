@@ -29,6 +29,6 @@ type Query {
     conference(id: ID): Conference!
     teams: [Team!]!
     team(id: ID): Team!
-    players: [Player!]!
+    players(total: Int page: Int filter: String): [Player!]!
     player(id: ID): Player
 }
