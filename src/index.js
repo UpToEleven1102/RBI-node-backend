@@ -3,35 +3,36 @@ require('dotenv').config();
 const Conference = require('./models/conference');
 const Player = require('./models/player');
 const Team = require('./models/team');
-const {scraping} = require('./db/scraping');
+const { scraping } = require('./db/scraping');
 
 var db = require('./db/index');
 
 const faker = require('faker');
 
 var express = require('express');
-
+const bodyParser = require('body-parser');
 var app = express();
+app.use(bodyParser.json());
 
 //db config
 db.open();
 // db.generateSchemas();
 
 
-function seedData(){
+function seedData() {
     // for (var i = 0; i<10; i++) {
     //     Conference.createConference({name: faker.name.findName(), member_number: faker.random.number()});
     // }
 
-    for (let i=0; i<10; i++) {
-        Conference.createConference({name: faker.name.findName(), member_number: faker.random.number()});
-        for (let j=0; j<10; j++) {
-            Team.createTeam({name: faker.random.word(), university_name: faker.random.word(), conference_id: i+1});
-            for (let k=0; k<10; k++) {
+    for (let i = 0; i < 10; i++) {
+        Conference.createConference({ name: faker.name.findName(), member_number: faker.random.number() });
+        for (let j = 0; j < 10; j++) {
+            Team.createTeam({ name: faker.random.word(), university_name: faker.random.word(), conference_id: i + 1 });
+            for (let k = 0; k < 10; k++) {
                 //    (name, team_id, rush_yds, rush_attempt, rec_yds, catches, rush_td, rec_td, fumbles)
                 Player.createPlayer({
                     name: faker.random.word(),
-                    team_id: j+1,
+                    team_id: j + 1,
                     rush_yds: faker.random.number(),
                     rush_attempt: faker.random.number(),
                     rec_yds: faker.random.number(),
@@ -48,28 +49,32 @@ function seedData(){
 
 // seedData();
 
-app.get('/conferences', function(req,res){
-    Conference.getConferences((data) => res.json({success: true, data: data}));
+app.get('/conferences', function (req, res) {
+    Conference.getConferences((data) => res.json({ success: true, data: data }));
 });
 
-app.get('/players', function(req, res) {
-    Player.getPlayers(data => res.json({success: true, data: data}) );
+app.get('/players', function (req, res) {
+    Player.getPlayers(data => res.json({ success: true, data: data }));
 });
 
-app.get('/teams', function(req, res) {
-    Team.getTeams(data => res.json({success: true, data: data}));
+app.get('/teams', function (req, res) {
+    Team.getTeams(data => res.json({ success: true, data: data }));
 });
 
-app.get('/scrapping/', function(req, res) {
-    scraping().then(response => res.json({success: true, data: response}))
-        .catch(err => res.json({success: false, data: err}));
+app.post('/scrapping', function (req, res) {
+    if (req.body.idx && !isNaN(req.body.idx))
+        scraping(req.body.idx).then(response => res.json({ success: true, data: response }))
+            .catch(err => res.json({ success: false, data: err }));
+    else { 
+        res.json({success: false, data: "missing idx"});
+    }
 })
 
-app.get('*', function(req,res){
-    res.json({success: false, message: 'wrong route, buddy!'});
+app.get('*', function (req, res) {
+    res.json({ success: false, message: 'wrong route, buddy!' });
 })
 
-app.listen(8080, function(){
+app.listen(8080, function () {
     console.log('listening on port 8080');
 })
 

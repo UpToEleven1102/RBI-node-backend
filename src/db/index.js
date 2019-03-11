@@ -10,6 +10,8 @@ var connection = mysql.createConnection({
 })
 
 const open = () => {
+    // scraping(1100).then(res => console.log(res)).catch(err => console.log(err));
+
     connection.connect(function (err) {
         if (err) {
             console.error('Error connecting: ' + err.stack);
