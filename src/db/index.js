@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 const Division = require('../models/conference');
-const {scraping} = require('./scraping');
+const { scraping } = require('./scraping');
 
 var connection = mysql.createConnection({
     host: process.env.MYSQL_SERVER,
@@ -9,8 +9,15 @@ var connection = mysql.createConnection({
     password: process.env.MYSQL_PASSWORD,
 })
 
-const open = () => {
-    // scraping(1100).then(res => console.log(res)).catch(err => console.log(err));
+const open = async () => {
+    try {
+        for (i = 0; i < 1300; i = i + 50) {
+            res = await scraping(i);
+            console.log(res);
+        }
+    } catch (err) {
+        console.log(err)
+    }
 
     connection.connect(function (err) {
         if (err) {
