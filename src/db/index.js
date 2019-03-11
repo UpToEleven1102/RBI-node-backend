@@ -1,5 +1,6 @@
 var mysql = require('mysql');
 const Division = require('../models/conference');
+const {scraping} = require('./scraping');
 
 var connection = mysql.createConnection({
     host: process.env.MYSQL_SERVER,

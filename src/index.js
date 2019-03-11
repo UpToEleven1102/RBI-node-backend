@@ -3,6 +3,7 @@ require('dotenv').config();
 const Conference = require('./models/conference');
 const Player = require('./models/player');
 const Team = require('./models/team');
+const {scraping} = require('./db/scraping');
 
 var db = require('./db/index');
 
@@ -58,6 +59,11 @@ app.get('/players', function(req, res) {
 app.get('/teams', function(req, res) {
     Team.getTeams(data => res.json({success: true, data: data}));
 });
+
+app.get('/scrapping/', function(req, res) {
+    scraping().then(response => res.json({success: true, data: response}))
+        .catch(err => res.json({success: false, data: err}));
+})
 
 app.get('*', function(req,res){
     res.json({success: false, message: 'wrong route, buddy!'});
