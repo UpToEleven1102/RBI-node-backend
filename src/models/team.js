@@ -6,8 +6,8 @@ createTeam = data => {
 
     connection.query(sql, function (err, result) {
         if (err) throw err;
-        return result.insertId;
         console.log("1 team inserted");
+        return result.insertId;
     });
 }
 

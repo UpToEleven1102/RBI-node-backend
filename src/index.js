@@ -18,12 +18,29 @@ app.use(bodyParser.json());
 //db config
 db.open();
 
-async function seedData() {
-
+async function seedConferences() {
     let content = await fs.readFileSync('conferences.json')
     const conferences = JSON.parse(content)
 
     console.log(conferences);
+    conferences.forEach(c => Conference.createConference(c))
+}
+
+async function seedTeams() {
+    let content = await fs.readFileSync('teams.json')
+    const teams = JSON.parse(content)
+
+    console.log(teams);
+    teams.forEach(t => Team.createTeam(t))
+}
+
+function seedPlayers() {
+
+}
+
+async function seedData() {
+
+    
 
     // const content = await fs.readFileSync('players.json')
     // const players = JSON.parse(content)
@@ -49,7 +66,9 @@ async function seedData() {
 
     db.generateSchemas();
 
-    conferences.forEach(c => Conference.createConference(c))
+    await seedConferences();
+    await seedTeams();
+    
 };
 
 seedData();

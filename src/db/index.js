@@ -51,7 +51,7 @@ generateSchemas = () => {
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(64) NOT NULL,
         university_name VARCHAR(64) NULL,
-        team_img VARCHAR(64) NULL,
+        team_img TEXT NULL,
         conference_id INT,
         FOREIGN KEY (conference_id)
             REFERENCES conference(id)

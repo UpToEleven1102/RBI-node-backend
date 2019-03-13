@@ -198,8 +198,8 @@
         "conference_id": 2
     },
     {
-        "name": "Hawai'i Rainbow Warriors",
-        "university_name": "Hawai'i",
+        "name": "Hawaii Rainbow Warriors",
+        "university_name": "Hawaii",
         "team_img": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/62.png&w=250&h=250",
         "conference_id": 8
     },
@@ -264,7 +264,7 @@
         "conference_id": 10
     },
     {
-        "name": "Louisiana Ragin' Cajuns",
+        "name": "Louisiana Ragin Cajuns",
         "university_name": "Louisiana",
         "team_img": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/309.png&w=250&h=250",
         "conference_id": 11
