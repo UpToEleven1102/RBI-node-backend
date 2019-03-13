@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
 })
 
 const open = async () => {
-    await scraping(0);
+    scraping(0);
 
     connection.connect(function (err) {
         if (err) {

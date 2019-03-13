@@ -8,6 +8,7 @@ type Team {
     id: ID!
     name: String!
     university_name: String!
+    team_img: String
     conference: Conference!
 }
 
@@ -15,6 +16,10 @@ type Player {
     id: ID!
     name: String!
     team: Team!
+    player_img: String
+    class: String
+    ht_wt: String
+    home_town: String
     rush_yds: Float
     rush_attempt: Int
     rec_yds: Float
