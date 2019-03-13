@@ -42,7 +42,9 @@ createTable = (tableSchema, tableName) => {
 generateSchemas = () => {
     var divisionsSchema = `CREATE TABLE conference (
         id INT AUTO_INCREMENT PRIMARY KEY, 
-        name VARCHAR(64),
+        name VARCHAR(64) NOT NULL,
+        nick_name VARCHAR(64),
+        founded INT,
         member_number INT
         );`;
     var teamsSchema = `CREATE TABLE team (

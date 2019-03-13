@@ -2,7 +2,7 @@ type Conference {
     id: ID!
     name: String!
     nick_name: String!
-    founded: Number
+    founded: Int
     member_number: Int
 }
 

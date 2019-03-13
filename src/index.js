@@ -24,7 +24,6 @@ async function seedData() {
     const conferences = JSON.parse(content)
 
     console.log(conferences);
-    
 
     // const content = await fs.readFileSync('players.json')
     // const players = JSON.parse(content)
@@ -50,11 +49,7 @@ async function seedData() {
 
     db.generateSchemas();
 
-    conferences.forEach(c => Conference.createConference({}))
-
-    for (let i = 0; i < 10; i++) {
-        Conference.createConference({ name: faker.name.findName(), member_number: faker.random.number() });
-    }
+    conferences.forEach(c => Conference.createConference(c))
 };
 
 seedData();
