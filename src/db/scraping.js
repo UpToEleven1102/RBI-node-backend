@@ -6,7 +6,7 @@ const url = 'http://www.espn.com/college-football/players/_/position/rb';
 function writeToFile(data) {
     var fs = require("fs");
 
-    fs.writeFile("players.txt", JSON.stringify(data), function(err, data) {
+    fs.writeFile("players.json", JSON.stringify(data), function(err, data) {
     if (err) console.log(err);
     console.log("Successfully Written to File.");
     });

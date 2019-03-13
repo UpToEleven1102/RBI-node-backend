@@ -1,7 +1,7 @@
 const connection = require('../db/index').connection;
 
 const createConference = (data) => {
-    var sql = `INSERT INTO conference (name, member_number) VALUES ('${data.name}', '${data.member_number}')`;
+    var sql = `INSERT INTO conference (name, nick_name, member_number) VALUES ('${data.name}', '${data.member_number}')`;
 
     connection.query(sql, function (err, result) {
         if (err) throw err;

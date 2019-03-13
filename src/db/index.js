@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
 })
 
 const open = async () => {
-    scraping(0);
+    // scraping(0);
 
     connection.connect(function (err) {
         if (err) {
@@ -49,6 +49,7 @@ generateSchemas = () => {
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(64) NOT NULL,
         university_name VARCHAR(64) NULL,
+        team_img VARCHAR(64) NULL,
         conference_id INT,
         FOREIGN KEY (conference_id)
             REFERENCES conference(id)
@@ -59,14 +60,19 @@ generateSchemas = () => {
     var playersSchema = `CREATE TABLE player (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(64) NOT NULL,
-        team_id INT,
-        rush_yds FLOAT,
-        rush_attempt INT,
-        rec_yds FLOAT,
-        catches INT,
-        rush_td FLOAT,
-        rec_td FLOAT,
-        fumbles FLOAT,
+        team_id INT NULL,
+        player_img TEXT NULL,
+        class TEXT NULL,
+        ht_wt TEXT NULL,
+        home_town TEXT NULL,
+        dob TEXT NULL,
+        rush_yds FLOAT NULL,
+        rush_attempt INT NULL,
+        rec_yds FLOAT NULL,
+        catches INT NULL,
+        rush_td FLOAT NULL,
+        rec_td FLOAT NULL,
+        fumbles FLOAT NULL,
         FOREIGN KEY (team_id)
             REFERENCES team(id)
             ON DELETE CASCADE

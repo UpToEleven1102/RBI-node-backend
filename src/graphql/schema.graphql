@@ -1,7 +1,9 @@
 type Conference {
     id: ID!
     name: String!
-    member_number: Int!
+    nick_name: String!
+    founded: Number
+    member_number: Int
 }
 
 type Team {
@@ -20,6 +22,7 @@ type Player {
     class: String
     ht_wt: String
     home_town: String
+    dob: String
     rush_yds: Float
     rush_attempt: Int
     rec_yds: Float

@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "name": "American Athletic Conference",
+        "nick_name": "The American",
+        "founded": 1979,
+        "member_number": 12
+    },
+    {
+        "id": 2,
+        "name": "Atlantic Coast Conference",
+        "nick_name": "ACC",
+        "founded": 1953,
+        "member_number": 15
+    },
+    {
+        "id": 3,
+        "name": "Big Ten Conference",
+        "nick_name": "Big Ten",
+        "founded": 1896,
+        "member_number": 14
+    },
+    {
+        "id": 4,
+        "name": "Big 12 Conference",
+        "nick_name": "Big 12",
+        "founded": 1996,
+        "member_number": 10
+    },
+    {
+        "id": 5,
+        "name": "Conference USA",
+        "nick_name": "C-USA",
+        "founded": 1995,
+        "member_number": 14
+    },
+    {
+        "id": 6,
+        "name": "Division I FBS Independents",
+        "nick_name": "Ind.",
+        "founded": null,
+        "member_number": 6
+    },
+    {
+        "id": 7,
+        "name": "Mid-American Conference",
+        "nick_name": "MAC",
+        "founded": 1946,
+        "member_number": 12
+    },
+    {
+        "id": 8,
+        "name": "Mountain West Conference",
+        "nick_name": "MWC",
+        "founded": 1999,
+        "member_number": 11
+    },
+    {
+        "id": 9,
+        "name": "Pac-12 Conference",
+        "nick_name": "Pac-12",
+        "founded": 1959,
+        "member_number": 12
+    },
+    {
+        "id": 10,
+        "name": "Southeastern Conference",
+        "nick_name": "SEC",
+        "founded": 1932,
+        "member_number": 14
+    },
+    {
+        "id": 11,
+        "name": "Sun Belt Conference",
+        "nick_name": "Sun Belt",
+        "founded": 1976,
+        "member_number": 12
+    }
+]

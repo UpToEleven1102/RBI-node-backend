@@ -4,6 +4,7 @@ const Conference = require('./models/conference');
 const Player = require('./models/player');
 const Team = require('./models/team');
 const { scraping } = require('./db/scraping');
+const fs = require('fs');
 
 var db = require('./db/index');
 
@@ -16,37 +17,47 @@ app.use(bodyParser.json());
 
 //db config
 db.open();
-// db.generateSchemas();
 
+async function seedData() {
 
-function seedData() {
-    // for (var i = 0; i<10; i++) {
-    //     Conference.createConference({name: faker.name.findName(), member_number: faker.random.number()});
-    // }
+    let content = await fs.readFileSync('conferences.json')
+    const conferences = JSON.parse(content)
+
+    console.log(conferences);
+    
+
+    // const content = await fs.readFileSync('players.json')
+    // const players = JSON.parse(content)
+    // let teams = [] 
+    // players.forEach(player => {
+    //     team = {
+    //         name: player.team_name,
+    //         university_name: player.university,
+    //         team_img: player.team_logo
+    //     }
+
+    //     if (teams.filter(ele => ele.name === team.name).length === 0) {
+    //         teams.push(team)
+    //     } 
+    // });
+
+    // fs.writeFile("./teams.json", JSON.stringify(teams), function(err, data){
+    //     if (err) console.log(err);
+    //     console.log("Successfully Written to File.");
+    // })
+
+    // console.log(teams);
+
+    db.generateSchemas();
+
+    conferences.forEach(c => Conference.createConference({}))
 
     for (let i = 0; i < 10; i++) {
         Conference.createConference({ name: faker.name.findName(), member_number: faker.random.number() });
-        for (let j = 0; j < 10; j++) {
-            Team.createTeam({ name: faker.random.word(), university_name: faker.random.word(), conference_id: i + 1 });
-            for (let k = 0; k < 10; k++) {
-                //    (name, team_id, rush_yds, rush_attempt, rec_yds, catches, rush_td, rec_td, fumbles)
-                Player.createPlayer({
-                    name: faker.random.word(),
-                    team_id: j + 1,
-                    rush_yds: faker.random.number(),
-                    rush_attempt: faker.random.number(),
-                    rec_yds: faker.random.number(),
-                    catches: faker.random.number(),
-                    rush_td: faker.random.number(),
-                    rec_td: faker.random.number(),
-                    fumbles: faker.random.number(),
-                })
-            }
-        }
     }
 };
 
-// seedData();
+seedData();
 
 app.get('/conferences', function (req, res) {
     Conference.getConferences((data) => res.json({ success: true, data: data }));
