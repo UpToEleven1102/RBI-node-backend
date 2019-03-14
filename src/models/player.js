@@ -2,9 +2,17 @@ const connection = require('../db/index').connection;
 
 
 createPlayer = data => {
+    home_town = data.playerInfo.Hometown? `'${data.playerInfo.Hometown}'` : null
+    ht_wt = data.playerInfo.HT/WT? `'${data.playerInfo.HT/WT}'` : null
+    dob = data.playerInfo.DOB? `'${data.playerInfo.DOB}'` : null
+    p_class = data.playerInfo.Class? `'${data.playerInfo.Class}'` : null
+
+   
+
+
     var sql = `INSERT INTO player 
     (name, team_id, player_img, class, ht_wt, home_town, dob, rush_yds, rush_attempt, rec_yds, catches, rush_td, rec_td, fumbles) 
-    VALUES('${data.name}', '${data.player_img}', '${data.class}', '${data.ht_wt}', '${data.home_town}', '${data.dob}', '${data.team_id}', '${data.rush_yds}', '${data.rush_attempt}', '${data.rec_yds}', '${data.catches}', '${data.rush_td}', '${data.rec_td}', '${data.fumbles}');
+    VALUES('${data.name}', '${data.team_id}', '${data.player_img}', ${p_class}, ${ht_wt}, ${home_town}, ${dob}, '${data.team_id}', '${data.rush_yds}', '${data.rush_attempt}', '${data.rec_yds}', '${data.catches}', '${data.rush_td}', '${data.rec_td}', '${data.fumbles}');
     `;
     connection.query(sql, function(err, result){
         if (err) throw err;

@@ -68,6 +68,16 @@ generateSchemas = () => {
         ht_wt TEXT NULL,
         home_town TEXT NULL,
         dob TEXT NULL,
+        FOREIGN KEY (team_id)
+            REFERENCES team(id)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE
+    );`;
+
+    var statSchema = `CREATE TABLE stat(
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        player_id INT NOT NULL,
+        year INT NOT NULL,
         rush_yds FLOAT NULL,
         rush_attempt INT NULL,
         rec_yds FLOAT NULL,
@@ -75,12 +85,13 @@ generateSchemas = () => {
         rush_td FLOAT NULL,
         rec_td FLOAT NULL,
         fumbles FLOAT NULL,
-        FOREIGN KEY (team_id)
-            REFERENCES team(id)
+        FOREIGN KEY (player_id)
+            REFERENCES player(id)
             ON DELETE CASCADE
             ON UPDATE CASCADE
-    );`;
+    );`
 
+    dropTable('stat');
     dropTable('player');
     dropTable('team');
     dropTable('conference');
@@ -88,6 +99,7 @@ generateSchemas = () => {
     createTable(divisionsSchema, 'conference');
     createTable(teamsSchema, 'team');
     createTable(playersSchema, 'player');
+    createTable(statSchema, 'stat');
 }
 
 module.exports = {

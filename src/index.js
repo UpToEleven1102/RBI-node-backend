@@ -34,8 +34,29 @@ async function seedTeams() {
     teams.forEach(t => Team.createTeam(t))
 }
 
-function seedPlayers() {
+async function seedPlayers() {
+    // let content = await fs.readFileSync('players.json')
+    // const players = JSON.parse(content)
+   
+    // content = await fs.readFileSync('teams_with_id.json')
+    // const teams = JSON.parse(content)
 
+    // // console.log(teams)
+    // players.forEach(p => {
+    //     team = teams.filter(t => {
+    //         return t.university_name === p.university
+    //     })
+
+    //     p.team_id = team[0] ? team[0].id : -1
+    // })
+    // fs.writeFile('./players_with_id.json', JSON.stringify(players))
+
+    let content = await fs.readFileSync('players_with_id.json')
+    const players = JSON.parse(content)
+
+    players.forEach(player => {
+        Player.createPlayer(player)
+    })
 }
 
 async function seedData() {
@@ -64,11 +85,15 @@ async function seedData() {
 
     // console.log(teams);
 
-    db.generateSchemas();
+    // db.generateSchemas();
 
-    await seedConferences();
-    await seedTeams();
-    
+    // await seedConferences();
+    // await seedTeams();
+    // const teams = await Team.getTeams()
+
+    // fs.writeFile('./teams_with_id.json', JSON.stringify(teams))
+
+    await seedPlayers()
 };
 
 seedData();
