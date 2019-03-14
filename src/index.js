@@ -100,7 +100,7 @@ async function seedData() {
 
     // console.log(teams);
 
-    db.generateSchemas();
+    // db.generateSchemas();
 
     // await seedConferences();
     // await seedTeams();
@@ -108,10 +108,10 @@ async function seedData() {
 
     // fs.writeFile('./teams_with_id.json', JSON.stringify(teams))
 
-    await seedPlayers()
+    //await seedPlayers()
 };
 
-seedData();
+//seedData();
 
 app.get('/conferences', function (req, res) {
     Conference.getConferences((data) => res.json({ success: true, data: data }));

@@ -32,9 +32,10 @@ module.exports = resolvers = {
                 const conference = await context.Conference.getConferenceById(team[0].conference_id);
                 team[0].conference = conference[0];
                 players[i].team = team[0];
+                stats = await context.Player.getStatByPlayerId(players[i].id)
+                players[i].stats = stats
             }
 
-            console.log(players);
 
             return players;
         },

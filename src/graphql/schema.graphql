@@ -23,6 +23,12 @@ type Player {
     ht_wt: String
     home_town: String
     dob: String
+    stats: [Stat]
+}
+
+type Stat {
+    id: ID!
+    year: Int
     rush_yds: Float
     rush_attempt: Int
     rec_yds: Float

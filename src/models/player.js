@@ -96,7 +96,8 @@ getStatByPlayerId = player_id => {
 
         connection.query(sql, function (err, result) {
             if (err) reject(err);
-            resolve(result)
+            console.log(result);
+                resolve(result)
         })
     })
 }
