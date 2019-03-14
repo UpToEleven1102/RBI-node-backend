@@ -3,6 +3,7 @@ require('dotenv').config();
 const Conference = require('./models/conference');
 const Player = require('./models/player');
 const Team = require('./models/team');
+const Stat = require('./models/stat')
 const { scraping } = require('./db/scraping');
 const fs = require('fs');
 
@@ -54,8 +55,17 @@ async function seedPlayers() {
     let content = await fs.readFileSync('players_with_id.json')
     const players = JSON.parse(content)
 
-    players.forEach(player => {
-        Player.createPlayer(player)
+    players.forEach(async player => {
+        player_id = await Player.createPlayer({name: player.name, team_id: player.team_id, player_img: player.player_img, Class: player.playerInfo.Class, HT_WT: player.playerInfo.HT_WT, Hometown: player.playerInfo.Hometown, DOB: player.playerInfo.DOB  })
+        if (player.stats.s2016 && player.stats.s2016.rush_attempt) {
+            await Stat.createStat({player_id, year: 2016, ...player.stats.s2016})
+        }
+        if (player.stats.s2017 && player.stats.s2017.rush_attempt) {
+            await Stat.createStat({player_id, year: 2017, ...player.stats.s2017})
+        }
+        if (player.stats.s2018 && player.stats.s2018.rush_attempt) {
+            await Stat.createStat({player_id, year: 2018, ...player.stats.s2018})
+        }
     })
 }
 
