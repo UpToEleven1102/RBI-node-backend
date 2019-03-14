@@ -3,7 +3,6 @@ require('dotenv').config();
 const Conference = require('./models/conference');
 const Player = require('./models/player');
 const Team = require('./models/team');
-const Stat = require('./models/stat')
 const { scraping } = require('./db/scraping');
 const fs = require('fs');
 
@@ -38,7 +37,7 @@ async function seedTeams() {
 async function seedPlayers() {
     // let content = await fs.readFileSync('players.json')
     // const players = JSON.parse(content)
-   
+
     // content = await fs.readFileSync('teams_with_id.json')
     // const teams = JSON.parse(content)
 
@@ -55,23 +54,29 @@ async function seedPlayers() {
     let content = await fs.readFileSync('players_with_id.json')
     const players = JSON.parse(content)
 
-    players.forEach(async player => {
-        player_id = await Player.createPlayer({name: player.name, team_id: player.team_id, player_img: player.player_img, Class: player.playerInfo.Class, HT_WT: player.playerInfo.HT_WT, Hometown: player.playerInfo.Hometown, DOB: player.playerInfo.DOB  })
+    try {
+        for (i = 0; i < players.length; ++i) {
+        player = players[i]
+        player_id = await Player.createPlayer({ name: player.name, team_id: player.team_id, player_img: player.player_img, Class: player.playerInfo.Class, HT_WT: player.playerInfo.HT_WT, Hometown: player.playerInfo.Hometown, DOB: player.playerInfo.DOB })
+
         if (player.stats.s2016 && player.stats.s2016.rush_attempt) {
-            await Stat.createStat({player_id, year: 2016, ...player.stats.s2016})
+            await Player.createStat({ player_id, year: 2016, ...player.stats.s2016 })
         }
         if (player.stats.s2017 && player.stats.s2017.rush_attempt) {
-            await Stat.createStat({player_id, year: 2017, ...player.stats.s2017})
+            await Player.createStat({ player_id, year: 2017, ...player.stats.s2017 })
         }
         if (player.stats.s2018 && player.stats.s2018.rush_attempt) {
-            await Stat.createStat({player_id, year: 2018, ...player.stats.s2018})
+            await Player.createStat({ player_id, year: 2018, ...player.stats.s2018 })
         }
-    })
+    }
+    }catch(err) {
+        console.log(err)
+    }  
 }
 
 async function seedData() {
 
-    
+
 
     // const content = await fs.readFileSync('players.json')
     // const players = JSON.parse(content)
@@ -95,7 +100,7 @@ async function seedData() {
 
     // console.log(teams);
 
-    // db.generateSchemas();
+    db.generateSchemas();
 
     // await seedConferences();
     // await seedTeams();
@@ -124,8 +129,8 @@ app.post('/scrapping', function (req, res) {
     if (req.body.idx && !isNaN(req.body.idx))
         scraping(req.body.idx).then(response => res.json({ success: true, data: response }))
             .catch(err => res.json({ success: false, data: err }));
-    else { 
-        res.json({success: false, data: "missing idx"});
+    else {
+        res.json({ success: false, data: "missing idx" });
     }
 })
 

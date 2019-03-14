@@ -200,7 +200,7 @@
         },
         "stats": {
             "s2017": {
-                "rush_yds": "1,024",
+                "rush_yds": "1024",
                 "rush_attempt": "194",
                 "rec_yds": "116",
                 "catches": "16",
@@ -785,7 +785,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,161",
+                "rush_yds": "1161",
                 "rush_attempt": "188",
                 "rec_yds": "281",
                 "catches": "17",
@@ -1022,7 +1022,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,098",
+                "rush_yds": "1098",
                 "rush_attempt": "210",
                 "rec_yds": "52",
                 "catches": "8",
@@ -1206,8 +1206,8 @@
     },
     {
         "name": "Justice Augafa",
-        "university": "Hawai'i",
-        "team_name": "Hawai'i Rainbow Warriors",
+        "university": "Hawaii",
+        "team_name": "Hawaii Rainbow Warriors",
         "team_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/62.png&w=250&h=250",
         "player_img": "https://a.espncdn.com/combiner/i?img=/i/headshots/college-football/players/full/4243025.png&w=350&h=254",
         "playerInfo": {
@@ -1215,33 +1215,8 @@
             "HT_WT": "5' 11\", 210 lbs",
             "Hometown": "Anchorage, AK"
         },
-        "stats": {
-            "s2016": {
-                "rush_attempt": "Sat 10/6",
-                "rec_yds": "0",
-                "catches": "0.0",
-                "rush_td": "0",
-                "rec_td": "",
-                "fumbles": ""
-            },
-            "s2017": {
-                "rush_attempt": "Sat 10/13",
-                "rec_yds": "0",
-                "catches": "0.0",
-                "rush_td": "0",
-                "rec_td": "",
-                "fumbles": ""
-            },
-            "s2018": {
-                "rush_attempt": "Sat 11/24",
-                "rec_yds": "0",
-                "catches": "0.0",
-                "rush_td": "0",
-                "rec_td": "",
-                "fumbles": ""
-            }
-        },
-        "team_id": -1
+        "stats": { },
+        "team_id": 34
     },
     {
         "name": "Tyler Badie",
@@ -1419,7 +1394,7 @@
         },
         "stats": {
             "s2017": {
-                "rush_yds": "1,307",
+                "rush_yds": "1307",
                 "rush_attempt": "261",
                 "rec_yds": "721",
                 "catches": "91",
@@ -1428,7 +1403,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,307",
+                "rush_yds": "1307",
                 "rush_attempt": "261",
                 "rec_yds": "721",
                 "catches": "91",
@@ -1542,7 +1517,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,355",
+                "rush_yds": "1355",
                 "rush_attempt": "256",
                 "rec_yds": "194",
                 "catches": "20",
@@ -1968,7 +1943,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,228",
+                "rush_yds": "1228",
                 "rush_attempt": "205",
                 "rec_yds": "185",
                 "catches": "30",
@@ -2037,7 +2012,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,642",
+                "rush_yds": "1642",
                 "rush_attempt": "300",
                 "rec_yds": "263",
                 "catches": "35",
@@ -2061,7 +2036,7 @@
         },
         "stats": {
             "s2017": {
-                "rush_yds": "1,053",
+                "rush_yds": "1053",
                 "rush_attempt": "204",
                 "rec_yds": "16",
                 "catches": "2",
@@ -2362,32 +2337,7 @@
             "HT_WT": "5' 11\", 210 lbs",
             "Hometown": "Crescent, PA"
         },
-        "stats": {
-            "s2016": {
-                "rush_attempt": "Sat 11/4",
-                "rec_yds": "0",
-                "catches": "1.8",
-                "rush_td": "8",
-                "rec_td": "",
-                "fumbles": ""
-            },
-            "s2017": {
-                "rush_attempt": "Sat 11/11",
-                "rec_yds": "0",
-                "catches": "3.9",
-                "rush_td": "7",
-                "rec_td": "",
-                "fumbles": ""
-            },
-            "s2018": {
-                "rush_attempt": "Sat 11/18",
-                "rec_yds": "0",
-                "catches": "4.3",
-                "rush_td": "19",
-                "rec_td": "",
-                "fumbles": ""
-            }
-        },
+        "stats": { },
         "team_id": 59
     },
     {
@@ -3149,7 +3099,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,134",
+                "rush_yds": "1134",
                 "rush_attempt": "201",
                 "rec_yds": "13",
                 "catches": "4",
@@ -3455,7 +3405,7 @@
         },
         "stats": {
             "s2018": {
-                "rush_yds": "1,056",
+                "rush_yds": "1056",
                 "rush_attempt": "119",
                 "rec_yds": "57",
                 "catches": "10",
@@ -3614,7 +3564,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,039",
+                "rush_yds": "1039",
                 "rush_attempt": "240",
                 "rec_yds": "78",
                 "catches": "14",
@@ -3947,7 +3897,7 @@
         },
         "stats": {
             "s2017": {
-                "rush_yds": "1,329",
+                "rush_yds": "1329",
                 "rush_attempt": "250",
                 "rec_yds": "42",
                 "catches": "4",
@@ -3956,7 +3906,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,227",
+                "rush_yds": "1227",
                 "rush_attempt": "272",
                 "rec_yds": "20",
                 "catches": "8",
@@ -4742,7 +4692,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,005",
+                "rush_yds": "1005",
                 "rush_attempt": "188",
                 "rec_yds": "34",
                 "catches": "4",
@@ -5285,8 +5235,8 @@
     },
     {
         "name": "Kaiwi Chung",
-        "university": "Hawai'i",
-        "team_name": "Hawai'i Rainbow Warriors",
+        "university": "Hawaii",
+        "team_name": "Hawaii Rainbow Warriors",
         "team_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/62.png&w=250&h=250",
         "player_img": "https://a.espncdn.com/combiner/i?img=/i/headshots/college-football/players/full/3124592.png&w=350&h=254",
         "playerInfo": {
@@ -5314,7 +5264,7 @@
                 "fumbles": "0"
             }
         },
-        "team_id": -1
+        "team_id": 34
     },
     {
         "name": "Jordan Chunn",
@@ -5754,26 +5704,7 @@
             "HT_WT": "5' 11\", 216 lbs",
             "DOB": "12/10/1994 (24)"
         },
-        "stats": {
-            "s2017": {
-                "rush_yds": "-",
-                "rush_attempt": "-",
-                "rec_yds": "-",
-                "catches": "-",
-                "rush_td": "-",
-                "rec_td": "-",
-                "fumbles": "-"
-            },
-            "s2018": {
-                "rush_yds": "",
-                "rush_attempt": "",
-                "rec_yds": "",
-                "catches": "",
-                "rush_td": "",
-                "rec_td": "",
-                "fumbles": ""
-            }
-        },
+        "stats": { },
         "team_id": 5
     },
     {
@@ -6046,7 +5977,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,085",
+                "rush_yds": "1085",
                 "rush_attempt": "128",
                 "rec_yds": "176",
                 "catches": "16",
@@ -6232,7 +6163,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,062",
+                "rush_yds": "1062",
                 "rush_attempt": "153",
                 "rec_yds": "14",
                 "catches": "5",
@@ -6325,7 +6256,7 @@
                 "fumbles": ""
             },
             "s2018": {
-                "rush_yds": "1,121",
+                "rush_yds": "1121",
                 "rush_attempt": "184",
                 "rec_yds": "30",
                 "catches": "7",
@@ -6506,8 +6437,8 @@
     },
     {
         "name": "Elijah Dale",
-        "university": "Hawai'i",
-        "team_name": "Hawai'i Rainbow Warriors",
+        "university": "Hawaii",
+        "team_name": "Hawaii Rainbow Warriors",
         "team_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/62.png&w=250&h=250",
         "player_img": "https://a.espncdn.com/combiner/i?img=/i/headshots/college-football/players/full/4242475.png&w=350&h=254",
         "playerInfo": {
@@ -6526,7 +6457,7 @@
                 "fumbles": "0"
             }
         },
-        "team_id": -1
+        "team_id": 34
     },
     {
         "name": "DeeJay Dallas",
@@ -7214,8 +7145,8 @@
     },
     {
         "name": "Mel Davis",
-        "university": "Hawai'i",
-        "team_name": "Hawai'i Rainbow Warriors",
+        "university": "Hawaii",
+        "team_name": "Hawaii Rainbow Warriors",
         "team_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/62.png&w=250&h=250",
         "player_img": "",
         "playerInfo": {
@@ -7243,7 +7174,7 @@
                 "fumbles": "0"
             }
         },
-        "team_id": -1
+        "team_id": 34
     },
     {
         "name": "Melvin Davis",
@@ -7567,7 +7498,7 @@
         },
         "stats": {
             "s2017": {
-                "rush_yds": "1,589",
+                "rush_yds": "1589",
                 "rush_attempt": "300",
                 "rec_yds": "0",
                 "catches": "0",
@@ -7576,7 +7507,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,108",
+                "rush_yds": "1108",
                 "rush_attempt": "227",
                 "rec_yds": "41",
                 "catches": "8",
@@ -7708,7 +7639,7 @@
         },
         "stats": {
             "s2017": {
-                "rush_yds": "1,403",
+                "rush_yds": "1403",
                 "rush_attempt": "194",
                 "rec_yds": "135",
                 "catches": "22",
@@ -7717,7 +7648,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,053",
+                "rush_yds": "1053",
                 "rush_attempt": "230",
                 "rec_yds": "263",
                 "catches": "26",
@@ -8797,7 +8728,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,026",
+                "rush_yds": "1026",
                 "rush_attempt": "215",
                 "rec_yds": "69",
                 "catches": "7",
@@ -9184,7 +9115,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,658",
+                "rush_yds": "1658",
                 "rush_attempt": "204",
                 "rec_yds": "78",
                 "catches": "12",
@@ -9325,7 +9256,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,187",
+                "rush_yds": "1187",
                 "rush_attempt": "179",
                 "rec_yds": "87",
                 "catches": "12",
@@ -9409,7 +9340,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,325",
+                "rush_yds": "1325",
                 "rush_attempt": "203",
                 "rec_yds": "66",
                 "catches": "7",
@@ -9913,7 +9844,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,050",
+                "rush_yds": "1050",
                 "rush_attempt": "200",
                 "rec_yds": "237",
                 "catches": "10",
@@ -9935,16 +9866,7 @@
             "HT_WT": "5' 11\", 180 lbs",
             "Hometown": "Kearns, UT"
         },
-        "stats": {
-            "s2018": {
-                "rush_attempt": "Sat 11/3",
-                "rec_yds": "0",
-                "catches": "0.0",
-                "rush_td": "0",
-                "rec_td": "",
-                "fumbles": ""
-            }
-        },
+        "stats": { },
         "team_id": 11
     },
     {
@@ -10728,8 +10650,8 @@
     },
     {
         "name": "Dayton Furuta",
-        "university": "Hawai'i",
-        "team_name": "Hawai'i Rainbow Warriors",
+        "university": "Hawaii",
+        "team_name": "Hawaii Rainbow Warriors",
         "team_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/62.png&w=250&h=250",
         "player_img": "https://a.espncdn.com/combiner/i?img=/i/headshots/college-football/players/full/3914927.png&w=350&h=254",
         "playerInfo": {
@@ -10766,7 +10688,7 @@
                 "fumbles": "0"
             }
         },
-        "team_id": -1
+        "team_id": 34
     },
     {
         "name": "Kenny Gainwell",
@@ -10823,7 +10745,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,091",
+                "rush_yds": "1091",
                 "rush_attempt": "228",
                 "rec_yds": "38",
                 "catches": "8",
@@ -11018,7 +10940,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,373",
+                "rush_yds": "1373",
                 "rush_attempt": "237",
                 "rec_yds": "137",
                 "catches": "19",
@@ -11027,7 +10949,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,380",
+                "rush_yds": "1380",
                 "rush_attempt": "222",
                 "rec_yds": "232",
                 "catches": "19",
@@ -11036,7 +10958,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,268",
+                "rush_yds": "1268",
                 "rush_attempt": "259",
                 "rec_yds": "77",
                 "catches": "21",
@@ -11234,7 +11156,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,332",
+                "rush_yds": "1332",
                 "rush_attempt": "251",
                 "rec_yds": "18",
                 "catches": "1",
@@ -12250,7 +12172,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,144",
+                "rush_yds": "1144",
                 "rush_attempt": "153",
                 "rec_yds": "66",
                 "catches": "15",
@@ -12448,7 +12370,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,034",
+                "rush_yds": "1034",
                 "rush_attempt": "206",
                 "rec_yds": "33",
                 "catches": "7",
@@ -12664,7 +12586,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,040",
+                "rush_yds": "1040",
                 "rush_attempt": "145",
                 "rec_yds": "99",
                 "catches": "14",
@@ -12673,7 +12595,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,000",
+                "rush_yds": "1000",
                 "rush_attempt": "135",
                 "rec_yds": "91",
                 "catches": "12",
@@ -13285,7 +13207,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,154",
+                "rush_yds": "1154",
                 "rush_attempt": "130",
                 "rec_yds": "226",
                 "catches": "24",
@@ -13294,7 +13216,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,909",
+                "rush_yds": "1909",
                 "rush_attempt": "214",
                 "rec_yds": "295",
                 "catches": "19",
@@ -13720,7 +13642,7 @@
                 "fumbles": ""
             },
             "s2018": {
-                "rush_yds": "1,032",
+                "rush_yds": "1032",
                 "rush_attempt": "229",
                 "rec_yds": "57",
                 "catches": "10",
@@ -13762,7 +13684,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,178",
+                "rush_yds": "1178",
                 "rush_attempt": "224",
                 "rec_yds": "43",
                 "catches": "7",
@@ -13870,7 +13792,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,142",
+                "rush_yds": "1142",
                 "rush_attempt": "206",
                 "rec_yds": "46",
                 "catches": "5",
@@ -13879,7 +13801,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,467",
+                "rush_yds": "1467",
                 "rush_attempt": "268",
                 "rec_yds": "190",
                 "catches": "31",
@@ -14137,22 +14059,13 @@
             "HT_WT": "5' 11\", 210 lbs",
             "Hometown": "Sacramento, CA"
         },
-        "stats": {
-            "s2018": {
-                "rush_attempt": "Sat 9/2",
-                "rec_yds": "0",
-                "catches": "0.0",
-                "rush_td": "0",
-                "rec_td": "",
-                "fumbles": ""
-            }
-        },
+        "stats": { },
         "team_id": 89
     },
     {
         "name": "Fred Holly III",
-        "university": "Hawai'i",
-        "team_name": "Hawai'i Rainbow Warriors",
+        "university": "Hawaii",
+        "team_name": "Hawaii Rainbow Warriors",
         "team_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/62.png&w=250&h=250",
         "player_img": "https://a.espncdn.com/combiner/i?img=/i/headshots/college-football/players/full/4038226.png&w=350&h=254",
         "playerInfo": {
@@ -14180,7 +14093,7 @@
                 "fumbles": "0"
             }
         },
-        "team_id": -1
+        "team_id": 34
     },
     {
         "name": "C.J. Holmes",
@@ -14312,7 +14225,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,018",
+                "rush_yds": "1018",
                 "rush_attempt": "159",
                 "rec_yds": "40",
                 "catches": "5",
@@ -14732,35 +14645,7 @@
             "HT_WT": "6' 1\", 225 lbs",
             "DOB": "3/27/1996 (22)"
         },
-        "stats": {
-            "s2016": {
-                "rush_yds": "-",
-                "rush_attempt": "-",
-                "rec_yds": "-",
-                "catches": "-",
-                "rush_td": "-",
-                "rec_td": "-",
-                "fumbles": "-"
-            },
-            "s2017": {
-                "rush_yds": "-",
-                "rush_attempt": "-",
-                "rec_yds": "-",
-                "catches": "-",
-                "rush_td": "-",
-                "rec_td": "-",
-                "fumbles": "-"
-            },
-            "s2018": {
-                "rush_yds": "",
-                "rush_attempt": "",
-                "rec_yds": "",
-                "catches": "",
-                "rush_td": "",
-                "rec_td": "",
-                "fumbles": ""
-            }
-        },
+        "stats": { },
         "team_id": 95
     },
     {
@@ -14956,7 +14841,7 @@
         },
         "stats": {
             "s2017": {
-                "rush_yds": "1,003",
+                "rush_yds": "1003",
                 "rush_attempt": "210",
                 "rec_yds": "26",
                 "catches": "6",
@@ -15064,7 +14949,7 @@
         },
         "stats": {
             "s2018": {
-                "rush_yds": "1,160",
+                "rush_yds": "1160",
                 "rush_attempt": "202",
                 "rec_yds": "26",
                 "catches": "4",
@@ -15167,8 +15052,8 @@
     },
     {
         "name": "Genta Ito",
-        "university": "Hawai'i",
-        "team_name": "Hawai'i Rainbow Warriors",
+        "university": "Hawaii",
+        "team_name": "Hawaii Rainbow Warriors",
         "team_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/62.png&w=250&h=250",
         "player_img": "https://a.espncdn.com/combiner/i?img=/i/headshots/college-football/players/full/4038229.png&w=350&h=254",
         "playerInfo": {
@@ -15187,7 +15072,7 @@
                 "fumbles": "0"
             }
         },
-        "team_id": -1
+        "team_id": 34
     },
     {
         "name": "Deon Jackson",
@@ -15717,7 +15602,7 @@
         },
         "stats": {
             "s2018": {
-                "rush_yds": "1,380",
+                "rush_yds": "1380",
                 "rush_attempt": "239",
                 "rec_yds": "147",
                 "catches": "25",
@@ -16207,7 +16092,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,004",
+                "rush_yds": "1004",
                 "rush_attempt": "110",
                 "rec_yds": "206",
                 "catches": "16",
@@ -16866,7 +16751,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,075",
+                "rush_yds": "1075",
                 "rush_attempt": "182",
                 "rec_yds": "84",
                 "catches": "14",
@@ -17107,8 +16992,8 @@
     },
     {
         "name": "Hekili Keliiliki",
-        "university": "Hawai'i",
-        "team_name": "Hawai'i Rainbow Warriors",
+        "university": "Hawaii",
+        "team_name": "Hawaii Rainbow Warriors",
         "team_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/62.png&w=250&h=250",
         "player_img": "https://a.espncdn.com/combiner/i?img=/i/headshots/college-football/players/full/4256087.png&w=350&h=254",
         "playerInfo": {
@@ -17139,7 +17024,7 @@
                 "fumbles": ""
             }
         },
-        "team_id": -1
+        "team_id": 34
     },
     {
         "name": "Joshua Kelley",
@@ -17172,7 +17057,7 @@
                 "fumbles": ""
             },
             "s2018": {
-                "rush_yds": "1,243",
+                "rush_yds": "1243",
                 "rush_attempt": "225",
                 "rec_yds": "193",
                 "catches": "27",
@@ -17202,15 +17087,6 @@
                 "rush_td": "0",
                 "rec_td": "0",
                 "fumbles": "0"
-            },
-            "s2017": {
-                "rush_yds": "-",
-                "rush_attempt": "-",
-                "rec_yds": "-",
-                "catches": "-",
-                "rush_td": "-",
-                "rec_td": "-",
-                "fumbles": "-"
             },
             "s2018": {
                 "rush_yds": "74",
@@ -18224,7 +18100,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,127",
+                "rush_yds": "1127",
                 "rush_attempt": "191",
                 "rec_yds": "322",
                 "catches": "45",
@@ -18578,7 +18454,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,228",
+                "rush_yds": "1228",
                 "rush_attempt": "232",
                 "rec_yds": "282",
                 "catches": "21",
@@ -18844,7 +18720,7 @@
         },
         "stats": {
             "s2017": {
-                "rush_yds": "1,037",
+                "rush_yds": "1037",
                 "rush_attempt": "192",
                 "rec_yds": "241",
                 "catches": "35",
@@ -18853,7 +18729,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,037",
+                "rush_yds": "1037",
                 "rush_attempt": "192",
                 "rec_yds": "241",
                 "catches": "35",
@@ -19073,8 +18949,8 @@
     },
     {
         "name": "Paul Lomanto",
-        "university": "Hawai'i",
-        "team_name": "Hawai'i Rainbow Warriors",
+        "university": "Hawaii",
+        "team_name": "Hawaii Rainbow Warriors",
         "team_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/62.png&w=250&h=250",
         "player_img": "",
         "playerInfo": {
@@ -19105,7 +18981,7 @@
                 "fumbles": ""
             }
         },
-        "team_id": -1
+        "team_id": 34
     },
     {
         "name": "Dominik London",
@@ -19207,7 +19083,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "2,118",
+                "rush_yds": "2118",
                 "rush_attempt": "263",
                 "rec_yds": "33",
                 "catches": "6",
@@ -20340,7 +20216,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,086",
+                "rush_yds": "1086",
                 "rush_attempt": "212",
                 "rec_yds": "284",
                 "catches": "28",
@@ -20349,7 +20225,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,415",
+                "rush_yds": "1415",
                 "rush_attempt": "302",
                 "rec_yds": "173",
                 "catches": "27",
@@ -20886,7 +20762,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,182",
+                "rush_yds": "1182",
                 "rush_attempt": "133",
                 "rec_yds": "116",
                 "catches": "8",
@@ -21012,7 +20888,7 @@
         },
         "stats": {
             "s2018": {
-                "rush_yds": "1,034",
+                "rush_yds": "1034",
                 "rush_attempt": "131",
                 "rec_yds": "73",
                 "catches": "7",
@@ -21369,7 +21245,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,009",
+                "rush_yds": "1009",
                 "rush_attempt": "201",
                 "rec_yds": "118",
                 "catches": "14",
@@ -21402,7 +21278,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,045",
+                "rush_yds": "1045",
                 "rush_attempt": "225",
                 "rec_yds": "39",
                 "catches": "10",
@@ -21759,16 +21635,7 @@
             "HT_WT": "5' 9\", 165 lbs",
             "Hometown": "Storrs Mansfield, CT"
         },
-        "stats": {
-            "s2018": {
-                "rush_attempt": "Sat 11/24",
-                "rec_yds": "0",
-                "catches": "0.0",
-                "rush_td": "0",
-                "rec_td": "",
-                "fumbles": ""
-            }
-        },
+        "stats": { },
         "team_id": 39
     },
     {
@@ -21835,7 +21702,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,146",
+                "rush_yds": "1146",
                 "rush_attempt": "258",
                 "rec_yds": "296",
                 "catches": "36",
@@ -21844,7 +21711,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,216",
+                "rush_yds": "1216",
                 "rush_attempt": "257",
                 "rec_yds": "157",
                 "catches": "22",
@@ -21982,7 +21849,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,402",
+                "rush_yds": "1402",
                 "rush_attempt": "237",
                 "rec_yds": "32",
                 "catches": "5",
@@ -21991,7 +21858,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,037",
+                "rush_yds": "1037",
                 "rush_attempt": "183",
                 "rec_yds": "163",
                 "catches": "12",
@@ -22183,7 +22050,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,173",
+                "rush_yds": "1173",
                 "rush_attempt": "214",
                 "rec_yds": "243",
                 "catches": "29",
@@ -22192,7 +22059,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,096",
+                "rush_yds": "1096",
                 "rush_attempt": "179",
                 "rec_yds": "50",
                 "catches": "8",
@@ -23016,7 +22883,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,213",
+                "rush_yds": "1213",
                 "rush_attempt": "194",
                 "rec_yds": "66",
                 "catches": "11",
@@ -23340,7 +23207,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,006",
+                "rush_yds": "1006",
                 "rush_attempt": "192",
                 "rec_yds": "97",
                 "catches": "10",
@@ -23349,7 +23216,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,306",
+                "rush_yds": "1306",
                 "rush_attempt": "213",
                 "rec_yds": "212",
                 "catches": "21",
@@ -23481,7 +23348,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,097",
+                "rush_yds": "1097",
                 "rush_attempt": "137",
                 "rec_yds": "54",
                 "catches": "7",
@@ -23541,7 +23408,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,082",
+                "rush_yds": "1082",
                 "rush_attempt": "155",
                 "rec_yds": "203",
                 "catches": "23",
@@ -23799,7 +23666,7 @@
         },
         "stats": {
             "s2018": {
-                "rush_yds": "1,013",
+                "rush_yds": "1013",
                 "rush_attempt": "183",
                 "rec_yds": "62",
                 "catches": "7",
@@ -25216,7 +25083,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,181",
+                "rush_yds": "1181",
                 "rush_attempt": "207",
                 "rec_yds": "229",
                 "catches": "25",
@@ -25484,8 +25351,8 @@
     },
     {
         "name": "Miles Reed",
-        "university": "Hawai'i",
-        "team_name": "Hawai'i Rainbow Warriors",
+        "university": "Hawaii",
+        "team_name": "Hawaii Rainbow Warriors",
         "team_logo": "https://a.espncdn.com/combiner/i?img=/i/teamlogos/ncaa/500/62.png&w=250&h=250",
         "player_img": "https://a.espncdn.com/combiner/i?img=/i/headshots/college-football/players/full/4256085.png&w=350&h=254",
         "playerInfo": {
@@ -25504,7 +25371,7 @@
                 "fumbles": "0"
             }
         },
-        "team_id": -1
+        "team_id": 34
     },
     {
         "name": "Kadin Remsberg",
@@ -26248,7 +26115,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,216",
+                "rush_yds": "1216",
                 "rush_attempt": "225",
                 "rec_yds": "62",
                 "catches": "14",
@@ -26566,7 +26433,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,274",
+                "rush_yds": "1274",
                 "rush_attempt": "220",
                 "rec_yds": "139",
                 "catches": "24",
@@ -26964,35 +26831,7 @@
             "HT_WT": "5' 6\", 203 lbs",
             "DOB": "4/27/1995 (23)"
         },
-        "stats": {
-            "s2016": {
-                "rush_yds": "-",
-                "rush_attempt": "-",
-                "rec_yds": "-",
-                "catches": "-",
-                "rush_td": "-",
-                "rec_td": "-",
-                "fumbles": "-"
-            },
-            "s2017": {
-                "rush_yds": "-",
-                "rush_attempt": "-",
-                "rec_yds": "-",
-                "catches": "-",
-                "rush_td": "-",
-                "rec_td": "-",
-                "fumbles": "-"
-            },
-            "s2018": {
-                "rush_yds": "",
-                "rush_attempt": "",
-                "rec_yds": "",
-                "catches": "",
-                "rush_td": "",
-                "rec_td": "",
-                "fumbles": ""
-            }
-        },
+        "stats": { },
         "team_id": 113
     },
     {
@@ -27050,7 +26889,7 @@
         },
         "stats": {
             "s2018": {
-                "rush_yds": "1,137",
+                "rush_yds": "1137",
                 "rush_attempt": "228",
                 "rec_yds": "86",
                 "catches": "16",
@@ -27701,7 +27540,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,021",
+                "rush_yds": "1021",
                 "rush_attempt": "152",
                 "rec_yds": "163",
                 "catches": "26",
@@ -27710,7 +27549,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,920",
+                "rush_yds": "1920",
                 "rush_attempt": "301",
                 "rec_yds": "198",
                 "catches": "19",
@@ -27719,7 +27558,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,348",
+                "rush_yds": "1348",
                 "rush_attempt": "261",
                 "rec_yds": "36",
                 "catches": "6",
@@ -27977,7 +27816,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,186",
+                "rush_yds": "1186",
                 "rush_attempt": "219",
                 "rec_yds": "105",
                 "catches": "9",
@@ -28396,7 +28235,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,158",
+                "rush_yds": "1158",
                 "rush_attempt": "240",
                 "rec_yds": "188",
                 "catches": "23",
@@ -28627,7 +28466,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,091",
+                "rush_yds": "1091",
                 "rush_attempt": "186",
                 "rec_yds": "39",
                 "catches": "2",
@@ -28636,7 +28475,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,333",
+                "rush_yds": "1333",
                 "rush_attempt": "262",
                 "rec_yds": "72",
                 "catches": "10",
@@ -28645,7 +28484,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,449",
+                "rush_yds": "1449",
                 "rush_attempt": "289",
                 "rec_yds": "105",
                 "catches": "17",
@@ -29634,7 +29473,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,049",
+                "rush_yds": "1049",
                 "rush_attempt": "163",
                 "rec_yds": "297",
                 "catches": "32",
@@ -29856,7 +29695,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,434",
+                "rush_yds": "1434",
                 "rush_attempt": "255",
                 "rec_yds": "133",
                 "catches": "16",
@@ -29880,7 +29719,7 @@
         },
         "stats": {
             "s2017": {
-                "rush_yds": "1,977",
+                "rush_yds": "1977",
                 "rush_attempt": "299",
                 "rec_yds": "95",
                 "catches": "8",
@@ -29889,7 +29728,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "2,194",
+                "rush_yds": "2194",
                 "rush_attempt": "307",
                 "rec_yds": "60",
                 "catches": "8",
@@ -30014,14 +29853,7 @@
             "Hometown": "Cochran, GA"
         },
         "stats": {
-            "s2018": {
-                "rush_attempt": "Sat 11/3",
-                "rec_yds": "0",
-                "catches": "0.0",
-                "rush_td": "0",
-                "rec_td": "",
-                "fumbles": ""
-            }
+            "s2018": { }
         },
         "team_id": 68
     },
@@ -30056,7 +29888,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,122",
+                "rush_yds": "1122",
                 "rush_attempt": "208",
                 "rec_yds": "197",
                 "catches": "17",
@@ -30236,7 +30068,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,336",
+                "rush_yds": "1336",
                 "rush_attempt": "211",
                 "rec_yds": "143",
                 "catches": "8",
@@ -30245,7 +30077,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,067",
+                "rush_yds": "1067",
                 "rush_attempt": "215",
                 "rec_yds": "165",
                 "catches": "19",
@@ -30491,7 +30323,7 @@
         },
         "stats": {
             "s2018": {
-                "rush_yds": "1,044",
+                "rush_yds": "1044",
                 "rush_attempt": "153",
                 "rec_yds": "351",
                 "catches": "23",
@@ -31478,7 +31310,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,244",
+                "rush_yds": "1244",
                 "rush_attempt": "157",
                 "rec_yds": "170",
                 "catches": "13",
@@ -31502,7 +31334,7 @@
         },
         "stats": {
             "s2018": {
-                "rush_yds": "1,018",
+                "rush_yds": "1018",
                 "rush_attempt": "202",
                 "rec_yds": "315",
                 "catches": "27",
@@ -32311,7 +32143,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,017",
+                "rush_yds": "1017",
                 "rush_attempt": "179",
                 "rec_yds": "470",
                 "catches": "48",
@@ -32464,7 +32296,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,339",
+                "rush_yds": "1339",
                 "rush_attempt": "227",
                 "rec_yds": "70",
                 "catches": "14",
@@ -32515,7 +32347,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,329",
+                "rush_yds": "1329",
                 "rush_attempt": "244",
                 "rec_yds": "232",
                 "catches": "25",
@@ -32907,7 +32739,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,096",
+                "rush_yds": "1096",
                 "rush_attempt": "182",
                 "rec_yds": "91",
                 "catches": "23",
@@ -33015,7 +32847,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,036",
+                "rush_yds": "1036",
                 "rush_attempt": "202",
                 "rec_yds": "92",
                 "catches": "15",
@@ -33617,7 +33449,7 @@
                 "fumbles": "0"
             },
             "s2017": {
-                "rush_yds": "1,107",
+                "rush_yds": "1107",
                 "rush_attempt": "236",
                 "rec_yds": "142",
                 "catches": "16",
@@ -34311,7 +34143,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,048",
+                "rush_yds": "1048",
                 "rush_attempt": "185",
                 "rec_yds": "22",
                 "catches": "2",
@@ -34353,7 +34185,7 @@
         },
         "stats": {
             "s2016": {
-                "rush_yds": "1,057",
+                "rush_yds": "1057",
                 "rush_attempt": "156",
                 "rec_yds": "91",
                 "catches": "19",
@@ -34371,7 +34203,7 @@
                 "fumbles": "0"
             },
             "s2018": {
-                "rush_yds": "1,760",
+                "rush_yds": "1760",
                 "rush_attempt": "271",
                 "rec_yds": "278",
                 "catches": "27",
@@ -34503,7 +34335,7 @@
         },
         "stats": {
             "s2018": {
-                "rush_yds": "1,125",
+                "rush_yds": "1125",
                 "rush_attempt": "161",
                 "rec_yds": "289",
                 "catches": "33",

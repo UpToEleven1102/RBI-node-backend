@@ -93,11 +93,11 @@ generateSchemas = () => {
 
     dropTable('stat');
     dropTable('player');
-    dropTable('team');
-    dropTable('conference');
+    // dropTable('team');
+    // dropTable('conference');
 
-    createTable(divisionsSchema, 'conference');
-    createTable(teamsSchema, 'team');
+    // createTable(divisionsSchema, 'conference');
+    // createTable(teamsSchema, 'team');
     createTable(playersSchema, 'player');
     createTable(statSchema, 'stat');
 }
