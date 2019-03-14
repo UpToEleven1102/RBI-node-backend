@@ -12,7 +12,7 @@ const createConference = (data) => {
 
 const getConferences = () => {
     return new Promise(function(resolve, reject){
-        const sql = `SELECT id, name, member_number FROM conference;`;
+        const sql = `SELECT * FROM conference;`;
         connection.query(sql, function(err, result){
             if (err)
                 reject(err);
