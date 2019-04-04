@@ -22,6 +22,10 @@ module.exports = resolvers = {
             team[0].conference = conference[0];
             return team[0];
         },
+        teamPlayers: async (root, args, context) => { 
+            const players = await context.Player.getPlayersByTeamId(args.id);
+            return players;
+        },
         players: async (root, args, context) => {
             // const rowNum = await context.Player.getRowNum();
             // console.log(rowNum);

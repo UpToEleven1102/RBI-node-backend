@@ -108,6 +108,19 @@ createStat = data => new Promise(function (resolve, reject) {
     })
 })
 
+getPlayersByTeamId = team_id => {
+    return new Promise((resolve, reject) => {
+        var sql = `SELECT * FROM player WHERE team_id=${team_id};`
+
+        connection.query(sql, function (err, result) {
+            if (err) reject(err);
+            console.log(result);
+            resolve(result)
+        })
+    })
+}
+
+
 getStatByPlayerId = player_id => {
     return new Promise((resolve, reject) => {
         var sql = `SELECT * FROM stat WHERE player_id=${player_id};`
@@ -140,6 +153,7 @@ module.exports = {
     createStat,
     getStatByPlayerId,
     updatePlayer,
-    getTopTenPlayers
+    getTopTenPlayers,
+    getPlayersByTeamId
 }
 
