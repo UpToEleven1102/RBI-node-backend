@@ -31,9 +31,19 @@ getTeamById = (id) => new Promise(function(resolve, reject){
     })
 });
 
+getTeamsByConferenceId = (id) => new Promise(function(resolve, reject){
+    const sql = `SELECT * FROM team WHERE conference_id=${id};`
+     connection.query(sql, function(err, result) {
+         if (err)
+             reject(err);
+         resolve(result);
+     })
+ });
+
 module.exports = {
     createTeam,
     getTeams,
-    getTeamById
+    getTeamById,
+    getTeamsByConferenceId
 }
 

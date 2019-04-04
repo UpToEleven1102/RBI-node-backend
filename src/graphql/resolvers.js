@@ -6,6 +6,10 @@ module.exports = resolvers = {
         },
         conference: async (root, args, context) => {
             const res = await context.Conference.getConferenceById(args.id);
+            if (res[0])
+                res[0].teams = await context.Team.getTeamsByConferenceId(res[0].id);
+            else
+                res[0].teams = []
             return res[0];
         },
         teams: async (root, args, context) => {
@@ -22,7 +26,7 @@ module.exports = resolvers = {
             team[0].conference = conference[0];
             return team[0];
         },
-        teamPlayers: async (root, args, context) => { 
+        teamPlayers: async (root, args, context) => {
             const players = await context.Player.getPlayersByTeamId(args.id);
             return players;
         },

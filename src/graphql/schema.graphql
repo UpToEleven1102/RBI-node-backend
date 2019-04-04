@@ -4,6 +4,7 @@ type Conference {
     nick_name: String
     founded: Int
     member_number: Int
+    teams: [Team!]!
 }
 
 type Team {
