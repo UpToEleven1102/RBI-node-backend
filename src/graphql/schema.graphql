@@ -24,6 +24,7 @@ type Player {
     home_town: String
     dob: String
     stats: [Stat]
+    rbi: Float
 }
 
 type Stat {
@@ -36,6 +37,7 @@ type Stat {
     rush_td: Float
     rec_td: Float
     fumbles: Float
+    rbi: Float
 }
 
 type Query {
@@ -45,4 +47,5 @@ type Query {
     team(id: ID): Team!
     players(total: Int page: Int filter: String): [Player!]!
     player(id: ID): Player
+    topPlayers: [Player!]!
 }

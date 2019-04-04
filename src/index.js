@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 //db config
 db.open();
 
+
 async function seedConferences() {
     let content = await fs.readFileSync('conferences.json')
     const conferences = JSON.parse(content)
@@ -76,7 +77,35 @@ async function seedPlayers() {
 
 async function seedData() {
 
+    const players = await Player.getPlayers(100000);
+    for (let i = 0; i < players.length; i++) {
+        const team = await Team.getTeamById(players[i].team_id);
+        const conference = await Conference.getConferenceById(team[0].conference_id);
+        team[0].conference = conference[0];
+        players[i].team = team[0];
+        stats = await Player.getStatByPlayerId(players[i].id)
+        for (let i = 0; i < stats.length; i++) {
+            let a = (stats[i].rush_yds / stats[i].rush_attempt - 3.5) * 2.1;
+            let b = (stats[i].rec_yds / stats[i].catches - 7) * 1.7;
+            let c = (stats[i].rush_td / stats[i].rush_attempt) * 50.3;
+            let d = (stats[i].rec_td / stats[i].catches) * 57.4;
+            let e = (stats[i].fumbles / (stats[i].catches + stats[i].rush_attempt)) * 129.9;
+            let x = .87 * a + .13 * b;
+            let y = .87 * c + .13 * d;
+            let z = e;
+            stats[i].rbi = (Math.max(0, Math.min(x, 3)) + Math.max(0, Math.min(y, 3)) + Math.max(0, Math.min(z, 3)) / 9) * 100;
+        }
+        players[i].stats = stats
+    }
 
+    let counter = 0;
+
+    for (let i = 0; i< players.length; i++) {
+        let player = players[i]
+        if (player.stats.length > 0) {
+            Player.updatePlayer(player.stats[0].rbi, player.id);
+        }
+    }
 
     // const content = await fs.readFileSync('players.json')
     // const players = JSON.parse(content)
@@ -111,7 +140,7 @@ async function seedData() {
     //await seedPlayers()
 };
 
-//seedData();
+// seedData();
 
 app.get('/conferences', function (req, res) {
     Conference.getConferences((data) => res.json({ success: true, data: data }));

@@ -9,6 +9,24 @@ const connection = require('../db/index').connection;
 //         home_town TEXT NULL,
 //         dob TEXT NULL,
 
+updatePlayer = (rbi = null, id = null) => {
+    return new Promise((resolve, reject) => {
+        if (rbi) {
+            var sql = `UPDATE player SET rbi=${rbi} WHERE id=${id}`;
+            connection.query(sql, function (err, result) {
+                if (err) {
+                    console.log(err);
+                    reject(err);
+                }
+                else {
+                    console.log("updated");
+                    resolve({});
+                }
+            })
+        }
+    })
+};
+
 createPlayer = data => {
     return new Promise((resolve, reject) => {
         home_town = data.Hometown ? `'${data.Hometown.replace(`'`, `''`)}'` : null
@@ -97,7 +115,19 @@ getStatByPlayerId = player_id => {
         connection.query(sql, function (err, result) {
             if (err) reject(err);
             console.log(result);
-                resolve(result)
+            resolve(result)
+        })
+    })
+}
+
+getTopTenPlayers = () => {
+    return new Promise((resolve, reject) => {
+        var sql = `SELECT * FROM player ORDER BY rbi DESC LIMIT 10;`
+
+        connection.query(sql, function (err, result) {
+            if (err) reject(err);
+            console.log(result);
+            resolve(result)
         })
     })
 }
@@ -108,6 +138,8 @@ module.exports = {
     getRowNum,
     getPlayerById,
     createStat,
-    getStatByPlayerId
+    getStatByPlayerId,
+    updatePlayer,
+    getTopTenPlayers
 }
 
