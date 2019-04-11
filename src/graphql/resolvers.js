@@ -41,15 +41,22 @@ module.exports = resolvers = {
                 players[i].team = team[0];
                 stats = await context.Player.getStatByPlayerId(players[i].id)
                 for (let i = 0; i < stats.length; i++) {
-                    let a = (stats[i].rush_yds / stats[i].rush_attempt - 3.5) * 2.1;
-                    let b = (stats[i].rec_yds / stats[i].catches - 7) * 1.7;
-                    let c = (stats[i].rush_td / stats[i].rush_attempt) * 50.3;
-                    let d = (stats[i].rec_td / stats[i].catches) * 57.4;
-                    let e = (stats[i].fumbles / (stats[i].catches + stats[i].rush_attempt)) * 129.9;
+                    const stat = stats[i];
+                    let rbi = 0;
+                    if (stat.rush_attempt === 0 || stat.catches === 0) {
+                        rbi = 0;
+                    } else {
+                        let a = (stat.rush_yds / stat.rush_attempt - 3.5) * 2.1;
+                    let b = (stat.rec_yds / stat.catches - 7) * 1.7;
+                    let c = (stat.rush_td / stat.rush_attempt) * 50.3;
+                    let d = (stat.rec_td / stat.catches) * 57.4;
+                    let e = (stat.fumbles / (stat.catches + stat.rush_attempt)) * 129.9;
                     let x = .87 * a + .13 * b;
                     let y = .87 * c + .13 * d;
                     let z = e;
-                    stats[i].rbi = (Math.max(0, Math.min(x, 3)) + Math.max(0, Math.min(y, 3)) + Math.max(0, Math.min(z, 3)) / 9) * 100;
+                    rbi = ((Math.max(0, Math.min(x, 3)) + Math.max(0, Math.min(y, 3)) + Math.max(0, Math.min(z, 3))) / 9) * 100;
+                    }
+                    stats[i].rbi = rbi;
                 }
                 players[i].stats = stats
             }
@@ -64,15 +71,22 @@ module.exports = resolvers = {
             player[0].team = team[0];
             stats = await context.Player.getStatByPlayerId(player[0].id)
             for (let i = 0; i < stats.length; i++) {
-                let a = (stats[i].rush_yds / stats[i].rush_attempt - 3.5) * 2.1;
-                let b = (stats[i].rec_yds / stats[i].catches - 7) * 1.7;
-                let c = (stats[i].rush_td / stats[i].rush_attempt) * 50.3;
-                let d = (stats[i].rec_td / stats[i].catches) * 57.4;
-                let e = (stats[i].fumbles / (stats[i].catches + stats[i].rush_attempt)) * 129.9;
-                let x = .87 * a + .13 * b;
-                let y = .87 * c + .13 * d;
-                let z = e;
-                stats[i].rbi = (Math.max(0, Math.min(x, 3)) + Math.max(0, Math.min(y, 3)) + Math.max(0, Math.min(z, 3)) / 9) * 100;
+                const stat = stats[i];
+                let rbi = 0;
+                if (stat.rush_attempt === 0 || stat.catches === 0) {
+                    rbi = 0;
+                } else {
+                    let a = (stat.rush_yds / stat.rush_attempt - 3.5) * 2.1;
+                    let b = (stat.rec_yds / stat.catches - 7) * 1.7;
+                    let c = (stat.rush_td / stat.rush_attempt) * 50.3;
+                    let d = (stat.rec_td / stat.catches) * 57.4;
+                    let e = (stat.fumbles / (stat.catches + stat.rush_attempt)) * 129.9;
+                    let x = .87 * a + .13 * b;
+                    let y = .87 * c + .13 * d;
+                    let z = e;
+                    rbi = ((Math.max(0, Math.min(x, 3)) + Math.max(0, Math.min(y, 3)) + Math.max(0, Math.min(z, 3))) / 9) * 100;
+                }
+                stats[i].rbi = rbi;
             }
             player[0].stats = stats
             return player[0];
@@ -92,14 +106,14 @@ module.exports = resolvers = {
                         rbi = 0;
                     } else {
                         let a = (stat.rush_yds / stat.rush_attempt - 3.5) * 2.1;
-                    let b = (stat.rec_yds / stat.catches - 7) * 1.7;
-                    let c = (stat.rush_td / stat.rush_attempt) * 50.3;
-                    let d = (stat.rec_td / stat.catches) * 57.4;
-                    let e = (stat.fumbles / (stat.catches + stat.rush_attempt)) * 129.9;
-                    let x = .87 * a + .13 * b;
-                    let y = .87 * c + .13 * d;
-                    let z = e;
-                    rbi = ((Math.max(0, Math.min(x, 3)) + Math.max(0, Math.min(y, 3)) + Math.max(0, Math.min(z, 3))) / 9) * 100;
+                        let b = (stat.rec_yds / stat.catches - 7) * 1.7;
+                        let c = (stat.rush_td / stat.rush_attempt) * 50.3;
+                        let d = (stat.rec_td / stat.catches) * 57.4;
+                        let e = (stat.fumbles / (stat.catches + stat.rush_attempt)) * 129.9;
+                        let x = .87 * a + .13 * b;
+                        let y = .87 * c + .13 * d;
+                        let z = e;
+                        rbi = ((Math.max(0, Math.min(x, 3)) + Math.max(0, Math.min(y, 3)) + Math.max(0, Math.min(z, 3))) / 9) * 100;
                     }
                     stats[i].rbi = rbi;
                 }
