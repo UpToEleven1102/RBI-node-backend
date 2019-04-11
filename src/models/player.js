@@ -10,8 +10,8 @@ const connection = require('../db/index').connection;
 //         dob TEXT NULL,
 
 updatePlayer = (rbi = null, id = null) => {
+    if (rbi === 0 || rbi) {
     return new Promise((resolve, reject) => {
-        if (rbi) {
             var sql = `UPDATE player SET rbi=${rbi} WHERE id=${id}`;
             connection.query(sql, function (err, result) {
                 if (err) {
@@ -19,12 +19,13 @@ updatePlayer = (rbi = null, id = null) => {
                     reject(err);
                 }
                 else {
-                    console.log("updated");
+                    console.log("updated ");
                     resolve({});
                 }
             })
-        }
     })
+}
+
 };
 
 createPlayer = data => {
@@ -75,6 +76,17 @@ getPlayers = (total = 10, page = 1, filter = '') => new Promise(function (resolv
             resolve(result);
     });
 });
+
+getALlPlayers = () => new Promise(function (resolve, reject) {
+    const sql = `SELECT * FROM player`;
+    connection.query(sql, function (err, result) {
+        if (err)
+            reject(err);
+        else
+            resolve(result);
+    });
+});
+
 
 getPlayerById = id => new Promise(function (resolve, reject) {
     const sql = `SELECT * FROM player WHERE id=${id};`;
@@ -154,6 +166,7 @@ module.exports = {
     getStatByPlayerId,
     updatePlayer,
     getTopTenPlayers,
-    getPlayersByTeamId
+    getPlayersByTeamId,
+    getALlPlayers
 }
 

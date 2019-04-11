@@ -18,6 +18,36 @@ app.use(bodyParser.json());
 //db config
 db.open();
 
+app.get('/conferences', function (req, res) {
+    Conference.getConferences((data) => res.json({ success: true, data: data }));
+});
+
+app.get('/players', function (req, res) {
+    Player.getPlayers(data => res.json({ success: true, data: data }));
+});
+
+app.get('/teams', function (req, res) {
+    Team.getTeams(data => res.json({ success: true, data: data }));
+});
+
+app.post('/scrapping', function (req, res) {
+    if (req.body.idx && !isNaN(req.body.idx))
+        scraping(req.body.idx).then(response => res.json({ success: true, data: response }))
+            .catch(err => res.json({ success: false, data: err }));
+    else {
+        res.json({ success: false, data: "missing idx" });
+    }
+})
+
+app.get('*', function (req, res) {
+    res.json({ success: false, message: 'wrong route, buddy!' });
+})
+
+app.listen(8080, function () {
+    console.log('listening on port 8080');
+})
+
+
 
 async function seedConferences() {
     let content = await fs.readFileSync('conferences.json')
@@ -57,54 +87,60 @@ async function seedPlayers() {
 
     try {
         for (i = 0; i < players.length; ++i) {
-        player = players[i]
-        player_id = await Player.createPlayer({ name: player.name, team_id: player.team_id, player_img: player.player_img, Class: player.playerInfo.Class, HT_WT: player.playerInfo.HT_WT, Hometown: player.playerInfo.Hometown, DOB: player.playerInfo.DOB })
+            player = players[i]
+            player_id = await Player.createPlayer({ name: player.name, team_id: player.team_id, player_img: player.player_img, Class: player.playerInfo.Class, HT_WT: player.playerInfo.HT_WT, Hometown: player.playerInfo.Hometown, DOB: player.playerInfo.DOB })
 
-        if (player.stats.s2016 && player.stats.s2016.rush_attempt) {
-            await Player.createStat({ player_id, year: 2016, ...player.stats.s2016 })
+            if (player.stats.s2016 && player.stats.s2016.rush_attempt) {
+                await Player.createStat({ player_id, year: 2016, ...player.stats.s2016 })
+            }
+            if (player.stats.s2017 && player.stats.s2017.rush_attempt) {
+                await Player.createStat({ player_id, year: 2017, ...player.stats.s2017 })
+            }
+            if (player.stats.s2018 && player.stats.s2018.rush_attempt) {
+                await Player.createStat({ player_id, year: 2018, ...player.stats.s2018 })
+            }
         }
-        if (player.stats.s2017 && player.stats.s2017.rush_attempt) {
-            await Player.createStat({ player_id, year: 2017, ...player.stats.s2017 })
-        }
-        if (player.stats.s2018 && player.stats.s2018.rush_attempt) {
-            await Player.createStat({ player_id, year: 2018, ...player.stats.s2018 })
-        }
-    }
-    }catch(err) {
+    } catch (err) {
         console.log(err)
-    }  
+    }
+}
+
+function calculateRBI(stat) {
+    if (stat.rush_attempt === 0 || stat.catches === 0) {
+        return 0;
+    }
+    let a = (stat.rush_yds / stat.rush_attempt - 3.5) * 2.1;
+    let b = (stat.rec_yds / stat.catches - 7) * 1.7;
+    let c = (stat.rush_td / stat.rush_attempt) * 50.3;
+    let d = (stat.rec_td / stat.catches) * 57.4;
+    let e = (stat.fumbles / (stat.catches + stat.rush_attempt)) * 129.9;
+    let x = .87 * a + .13 * b;
+    let y = .87 * c + .13 * d;
+    let z = e;
+    return ((Math.max(0, Math.min(x, 3)) + Math.max(0, Math.min(y, 3)) + Math.max(0, Math.min(z, 3))) / 9) * 100;
+}
+
+async function updatePlayer(player) {
+    return new Promise(async (resolve) => {
+        stats = await Player.getStatByPlayerId(player.id)
+        if (stats.length > 0) {
+            let i = stats.length - 1;
+            const rbi = calculateRBI(stats[i]);
+            if (rbi !== 0) {
+               console.log("rbi: ", rbi);
+             console.log("stats: ", stats[i]); 
+            }
+            await Player.updatePlayer(rbi, player.id);
+        }
+        resolve("success");        
+    })
 }
 
 async function seedData() {
-
-    const players = await Player.getPlayers(100000);
+    const players = await Player.getALlPlayers();
     for (let i = 0; i < players.length; i++) {
-        const team = await Team.getTeamById(players[i].team_id);
-        const conference = await Conference.getConferenceById(team[0].conference_id);
-        team[0].conference = conference[0];
-        players[i].team = team[0];
-        stats = await Player.getStatByPlayerId(players[i].id)
-        for (let i = 0; i < stats.length; i++) {
-            let a = (stats[i].rush_yds / stats[i].rush_attempt - 3.5) * 2.1;
-            let b = (stats[i].rec_yds / stats[i].catches - 7) * 1.7;
-            let c = (stats[i].rush_td / stats[i].rush_attempt) * 50.3;
-            let d = (stats[i].rec_td / stats[i].catches) * 57.4;
-            let e = (stats[i].fumbles / (stats[i].catches + stats[i].rush_attempt)) * 129.9;
-            let x = .87 * a + .13 * b;
-            let y = .87 * c + .13 * d;
-            let z = e;
-            stats[i].rbi = (Math.max(0, Math.min(x, 3)) + Math.max(0, Math.min(y, 3)) + Math.max(0, Math.min(z, 3)) / 9) * 100;
-        }
-        players[i].stats = stats
-    }
-
-    let counter = 0;
-
-    for (let i = 0; i< players.length; i++) {
-        let player = players[i]
-        if (player.stats.length > 0) {
-            Player.updatePlayer(player.stats[0].rbi, player.id);
-        }
+        await updatePlayer(players[i]);
+        // await Player.updatePlayer(0, players[i].id);
     }
 
     // const content = await fs.readFileSync('players.json')
@@ -141,32 +177,3 @@ async function seedData() {
 };
 
 // seedData();
-
-app.get('/conferences', function (req, res) {
-    Conference.getConferences((data) => res.json({ success: true, data: data }));
-});
-
-app.get('/players', function (req, res) {
-    Player.getPlayers(data => res.json({ success: true, data: data }));
-});
-
-app.get('/teams', function (req, res) {
-    Team.getTeams(data => res.json({ success: true, data: data }));
-});
-
-app.post('/scrapping', function (req, res) {
-    if (req.body.idx && !isNaN(req.body.idx))
-        scraping(req.body.idx).then(response => res.json({ success: true, data: response }))
-            .catch(err => res.json({ success: false, data: err }));
-    else {
-        res.json({ success: false, data: "missing idx" });
-    }
-})
-
-app.get('*', function (req, res) {
-    res.json({ success: false, message: 'wrong route, buddy!' });
-})
-
-app.listen(8080, function () {
-    console.log('listening on port 8080');
-})
