@@ -137,11 +137,11 @@ async function updatePlayer(player) {
 }
 
 async function seedData() {
-    const players = await Player.getALlPlayers();
-    for (let i = 0; i < players.length; i++) {
-        await updatePlayer(players[i]);
-        // await Player.updatePlayer(0, players[i].id);
-    }
+    // const players = await Player.getALlPlayers();
+    // for (let i = 0; i < players.length; i++) {
+    //     await updatePlayer(players[i]);
+    //     // await Player.updatePlayer(0, players[i].id);
+    // }
 
     // const content = await fs.readFileSync('players.json')
     // const players = JSON.parse(content)
@@ -174,6 +174,12 @@ async function seedData() {
     // fs.writeFile('./teams_with_id.json', JSON.stringify(teams))
 
     //await seedPlayers()
+
+    //create indexes
+    db.createIndexes('player', 'id');
+    db.createIndexes('stat', 'id');
+    db.createIndexes('team', 'id');
+    db.createIndexes('conference', 'id');
 };
 
 // seedData();

@@ -311,6 +311,62 @@ var templateObject_1;
 
 /***/ }),
 
+/***/ "./src/app/Pages/about-us/about-us.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/Pages/about-us/about-us.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <h3>\n  The A Team:\n  </h3>\n  <div class=\"section\">\n    <p><strong>Felix Perez</strong> - <a href=\"https://github.com/felixeperez\">github</a></p>\n    <p><strong>Isaac Simpson</strong> - <a href=\"#\">github</a></p>\n    <p><strong>Zachary Simpson</strong> - <a href=\"#\">github</a></p>\n    <p><strong>Huyen Vu​</strong> - <a href=\"https://github.com/UpToEleven1102\">github</a></p>\n  </div>\n\n  <h3>\n    Our collaborator:\n  </h3>\n  <div class=\"section\">\n    <p><strong>Christian Melchiorre</strong> - <a href=\"https://github.com/Cmelchio\">github</a></p>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/Pages/about-us/about-us.component.scss":
+/*!********************************************************!*\
+  !*** ./src/app/Pages/about-us/about-us.component.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".container {\n  margin: auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  width: 100%;\n  max-width: 1000px;\n  padding-top: 3rem; }\n\n.section {\n  display: block;\n  margin: 2rem;\n  padding: 2rem;\n  background-color: antiquewhite;\n  width: 100%;\n  max-width: 800px; }\n\na, a:visited {\n  color: blueviolet; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2h1eWVuL1dvcmtzcGFjZXMvdHR1L1JCSS1mcm9udC1lbmQvc3JjL2FwcC9QYWdlcy9hYm91dC11cy9hYm91dC11cy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQVk7RUFDWixhQUFhO0VBQ2IsdUJBQXVCO0VBQ3ZCLG1CQUFtQjtFQUNuQixzQkFBc0I7RUFDdEIsV0FBVztFQUNYLGlCQUFpQjtFQUNqQixpQkFBaUIsRUFBQTs7QUFHbkI7RUFDRSxjQUFjO0VBQ2QsWUFBWTtFQUNaLGFBQWE7RUFDYiw4QkFBOEI7RUFDOUIsV0FBVztFQUNYLGdCQUFnQixFQUFBOztBQUdsQjtFQUNFLGlCQUFpQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvUGFnZXMvYWJvdXQtdXMvYWJvdXQtdXMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGFpbmVyIHtcbiAgbWFyZ2luOiBhdXRvO1xuICBkaXNwbGF5OiBmbGV4O1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgd2lkdGg6IDEwMCU7XG4gIG1heC13aWR0aDogMTAwMHB4O1xuICBwYWRkaW5nLXRvcDogM3JlbTtcbn1cblxuLnNlY3Rpb24ge1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiAycmVtO1xuICBwYWRkaW5nOiAycmVtO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBhbnRpcXVld2hpdGU7XG4gIHdpZHRoOiAxMDAlO1xuICBtYXgtd2lkdGg6IDgwMHB4O1xufVxuXG5hLCBhOnZpc2l0ZWQge1xuICBjb2xvcjogYmx1ZXZpb2xldDtcbn1cbiJdfQ== */"
+
+/***/ }),
+
+/***/ "./src/app/Pages/about-us/about-us.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/Pages/about-us/about-us.component.ts ***!
+  \******************************************************/
+/*! exports provided: AboutUsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutUsComponent", function() { return AboutUsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var AboutUsComponent = /** @class */ (function () {
+    function AboutUsComponent() {
+    }
+    AboutUsComponent.prototype.ngOnInit = function () {
+    };
+    AboutUsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-about-us',
+            template: __webpack_require__(/*! ./about-us.component.html */ "./src/app/Pages/about-us/about-us.component.html"),
+            styles: [__webpack_require__(/*! ./about-us.component.scss */ "./src/app/Pages/about-us/about-us.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], AboutUsComponent);
+    return AboutUsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/Pages/calculate-rbi/calculate-rbi.component.html":
 /*!******************************************************************!*\
   !*** ./src/app/Pages/calculate-rbi/calculate-rbi.component.html ***!
@@ -428,9 +484,11 @@ var ConferencePageComponent = /** @class */ (function () {
         this.route.params.subscribe(function (params) { return _this.subscription = _this.apollo.watchQuery({
             query: graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n          {\n            conference(id: ", ") {\n              id\n              name\n              nick_name\n              founded\n              member_number\n              teams {\n                id\n                name\n                university_name\n                team_img\n              }\n            }\n          }\n        "], ["\n          {\n            conference(id: ", ") {\n              id\n              name\n              nick_name\n              founded\n              member_number\n              teams {\n                id\n                name\n                university_name\n                team_img\n              }\n            }\n          }\n        "])), params.id)
         }).valueChanges.subscribe(function (result) {
+            if (result.errors) {
+                _this.loading = false;
+                alert('Failed to fetch data');
+            }
             _this.conference = result.data.conference;
-            console.log(_this.conference);
-            _this.loading = false;
             _this.subscription.unsubscribe();
         }); });
     };
@@ -944,7 +1002,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"height: 100vh;\">\n  <mat-drawer-container style=\"height: 100%;\">\n    <mat-drawer [opened]=\"menuOpen\" mode=\"side\" style=\"height: 100%\">\n      <div style=\"display: flex; flex-direction: column; justify-content: center; align-items: center\">\n        <button mat-button (click)=\"goToHome()\">\n          <img style=\"height: 80px; margin: 40px;\" src=\"https://i1.wp.com/freepngimages.com/wp-content/uploads/2017/05/wilson-american-football.png\" />\n        </button>\n      </div>\n      <mat-nav-list>\n        <a mat-list-item routerLink=\"/top-players\">Top 10 players</a>\n        <a mat-list-item routerLink=\"/search\">Search</a>\n        <a mat-list-item routerLink=\"/calculate-rbi\">Manually calculate RBI </a>\n      </mat-nav-list>\n    </mat-drawer>\n    <mat-drawer-content>\n      <div class=\"nav-bar\">\n        <button mat-button style=\"background-color: #fff; margin: 10px; color: #555555;\" (click)=\"toggleMenu()\">\n          <mat-icon>reorder</mat-icon>\n        </button>\n      </div>\n      <router-outlet></router-outlet>\n    </mat-drawer-content>\n  </mat-drawer-container>\n</div>\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"height: 100vh;\">\n  <mat-drawer-container style=\"height: 100%;\">\n    <mat-drawer [opened]=\"menuOpen\" mode=\"side\" style=\"height: 100%\">\n      <div style=\"display: flex; flex-direction: column; justify-content: center; align-items: center\">\n        <button mat-button (click)=\"goToHome()\">\n          <img style=\"height: 80px; margin: 40px;\" src=\"http://images.performgroup.com/di/library/omnisport/d1/d9/ncaa-football-logo_1dtqtdoitpl9t1cqksvegay0r8.jpg\" />\n        </button>\n      </div>\n      <mat-nav-list>\n        <a mat-list-item routerLink=\"/top-players\">Top 10 players</a>\n        <a mat-list-item routerLink=\"/search\">Search</a>\n        <a mat-list-item routerLink=\"/calculate-rbi\">Manually Calculate RBI</a>\n        <a mat-list-item routerLink=\"/about-us\">About Us</a>\n      </mat-nav-list>\n    </mat-drawer>\n    <mat-drawer-content>\n      <div class=\"nav-bar\">\n        <button mat-button style=\"background-color: #fff; margin: 10px; color: #555555;\" (click)=\"toggleMenu()\">\n          <mat-icon>reorder</mat-icon>\n        </button>\n      </div>\n      <router-outlet></router-outlet>\n    </mat-drawer-content>\n  </mat-drawer-container>\n</div>\n\n"
 
 /***/ }),
 
@@ -1031,6 +1089,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Pages_team_page_team_page_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Pages/team-page/team-page.component */ "./src/app/Pages/team-page/team-page.component.ts");
 /* harmony import */ var _Pages_conference_page_conference_page_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./Pages/conference-page/conference-page.component */ "./src/app/Pages/conference-page/conference-page.component.ts");
 /* harmony import */ var _Pages_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./Pages/main-page/main-page.component */ "./src/app/Pages/main-page/main-page.component.ts");
+/* harmony import */ var _Pages_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./Pages/about-us/about-us.component */ "./src/app/Pages/about-us/about-us.component.ts");
+
 
 
 
@@ -1061,6 +1121,7 @@ var appRoutes = [
     { path: 'player/:id', component: _Pages_player_page_player_page_component__WEBPACK_IMPORTED_MODULE_18__["PlayerPageComponent"] },
     { path: 'team/:id', component: _Pages_team_page_team_page_component__WEBPACK_IMPORTED_MODULE_19__["TeamPageComponent"] },
     { path: 'conference/:id', component: _Pages_conference_page_conference_page_component__WEBPACK_IMPORTED_MODULE_20__["ConferencePageComponent"] },
+    { path: 'about-us', component: _Pages_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_22__["AboutUsComponent"] },
     { path: '', redirectTo: '/main', pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
@@ -1079,7 +1140,8 @@ var AppModule = /** @class */ (function () {
                 _Pages_player_page_player_page_component__WEBPACK_IMPORTED_MODULE_18__["PlayerPageComponent"],
                 _Pages_team_page_team_page_component__WEBPACK_IMPORTED_MODULE_19__["TeamPageComponent"],
                 _Pages_conference_page_conference_page_component__WEBPACK_IMPORTED_MODULE_20__["ConferencePageComponent"],
-                _Pages_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_21__["MainPageComponent"]
+                _Pages_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_21__["MainPageComponent"],
+                _Pages_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_22__["AboutUsComponent"],
             ],
             entryComponents: [_Components_loading_loading_component__WEBPACK_IMPORTED_MODULE_17__["LoadingComponent"]],
             imports: [

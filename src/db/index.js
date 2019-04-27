@@ -39,6 +39,14 @@ createTable = (tableSchema, tableName) => {
     });
 }
 
+createIndexes = (table_name, column_name) => {
+    connection.query(`ALTER TABLE ${table_name} ADD INDEX (${column_name})`, function (err, result) {
+        if (err)
+            throw err;
+            console.log(`added index for ${column_name} to table ${table_name}. Result: `, result)
+    })
+}
+
 generateSchemas = () => {
     var divisionsSchema = `CREATE TABLE conference (
         id INT AUTO_INCREMENT PRIMARY KEY, 
@@ -107,4 +115,5 @@ module.exports = {
     open,
     close,
     generateSchemas,
+    createIndexes,
 }
