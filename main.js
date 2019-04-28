@@ -1272,7 +1272,7 @@ var appRoutes = [
     { path: 'team/:id', component: _Pages_team_page_team_page_component__WEBPACK_IMPORTED_MODULE_19__["TeamPageComponent"] },
     { path: 'conference/:id', component: _Pages_conference_page_conference_page_component__WEBPACK_IMPORTED_MODULE_20__["ConferencePageComponent"] },
     { path: 'about-us', component: _Pages_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_22__["AboutUsComponent"] },
-    { path: '', redirectTo: '/about-us', pathMatch: 'full' }
+    { path: '', redirectTo: '/main', pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -1351,8 +1351,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var uri = 'https://rbi-node.herokuapp.com/'; // <-- add the URL of the GraphQL server here
-// const uri = 'http://localhost:4000/'; // <-- add the URL of the GraphQL server here
+// const uri = 'https://rbi-node.herokuapp.com/'; // <-- add the URL of the GraphQL server here
+var uri = 'http://localhost:4000/'; // <-- add the URL of the GraphQL server here
 function createApollo(httpLink) {
     return {
         link: httpLink.create({ uri: uri }),
