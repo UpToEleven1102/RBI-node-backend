@@ -1351,8 +1351,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// const uri = 'https://rbi-node.herokuapp.com/'; // <-- add the URL of the GraphQL server here
-var uri = 'http://localhost:4000/'; // <-- add the URL of the GraphQL server here
+var uri = 'https://rbi-node.herokuapp.com/'; // <-- add the URL of the GraphQL server here
+// const uri = 'http://localhost:4000/'; // <-- add the URL of the GraphQL server here
 function createApollo(httpLink) {
     return {
         link: httpLink.create({ uri: uri }),
