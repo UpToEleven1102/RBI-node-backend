@@ -23,6 +23,136 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/Components/conference-graph/conference-graph.component.html":
+/*!*****************************************************************************!*\
+  !*** ./src/app/Components/conference-graph/conference-graph.component.html ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"display: flex; justify-content: center; align-items: center; flex-direction: column; margin: 50px;\">\n  <mat-spinner *ngIf=\"loading\"></mat-spinner>\n  <div *ngIf=\"!loading\">\n    <ngx-charts-bubble-chart\n      [view]=\"[900, 600]\"\n      [scheme]=\"'vivid'\"\n      [schemeType]=\"'ordinal'\"\n      [results]=\"data\"\n      [animations]=\"true\"\n      [legendPosition]=\"'below'\"\n      [minRadius]=\"5\"\n      [maxRadius]=\"10\"\n      [tooltipDisabled]=\"false\"\n      [autoScale]=\"true\"\n      [showXAxisLabel]=\"true\"\n      [showYAxisLabel]=\"true\"\n      [showGridLines]=\"true\"\n      [roundDomains]=\"true\"\n      [xAxisLabel]=\"'Teams'\"\n      [yAxisLabel]=\"'RBI'\"\n      (select)=\"clickHandler($event)\"\n    ></ngx-charts-bubble-chart>\n  </div>\n\n</div>\n\n"
+
+/***/ }),
+
+/***/ "./src/app/Components/conference-graph/conference-graph.component.scss":
+/*!*****************************************************************************!*\
+  !*** ./src/app/Components/conference-graph/conference-graph.component.scss ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL0NvbXBvbmVudHMvY29uZmVyZW5jZS1ncmFwaC9jb25mZXJlbmNlLWdyYXBoLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/Components/conference-graph/conference-graph.component.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/Components/conference-graph/conference-graph.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: ConferenceGraphComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConferenceGraphComponent", function() { return ConferenceGraphComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! graphql-tag */ "./node_modules/graphql-tag/src/index.js");
+/* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var apollo_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! apollo-angular */ "./node_modules/apollo-angular/fesm5/ng.apollo.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
+
+
+
+var ConferenceGraphComponent = /** @class */ (function () {
+    function ConferenceGraphComponent(apollo, router) {
+        this.apollo = apollo;
+        this.router = router;
+        this.loading = true;
+        this.data = [];
+    }
+    ConferenceGraphComponent.prototype.ngOnInit = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _i, _a, team, _b, _c, _d, player, playerData;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_e) {
+                switch (_e.label) {
+                    case 0:
+                        _i = 0, _a = this.conference.teams;
+                        _e.label = 1;
+                    case 1:
+                        if (!(_i < _a.length)) return [3 /*break*/, 4];
+                        team = _a[_i];
+                        // @ts-ignore
+                        _b = team;
+                        return [4 /*yield*/, this.getPlayers(team)];
+                    case 2:
+                        // @ts-ignore
+                        _b.players = _e.sent();
+                        for (_c = 0, _d = team.players; _c < _d.length; _c++) {
+                            player = _d[_c];
+                            playerData = {
+                                name: player.name,
+                                series: [{
+                                        name: team.name,
+                                        x: team.university_name,
+                                        y: player.rbi,
+                                        r: player.rbi
+                                    }]
+                            };
+                            this.data.push(playerData);
+                        }
+                        _e.label = 3;
+                    case 3:
+                        _i++;
+                        return [3 /*break*/, 1];
+                    case 4:
+                        this.loading = false;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ConferenceGraphComponent.prototype.clickHandler = function (e) {
+        var player = this.conference.teams.filter(function (team) { return team.university_name === e.name; })[0].players.filter(function (p) { return p.name === e.series; });
+        this.router.navigateByUrl("player/" + player[0].id);
+    };
+    ConferenceGraphComponent.prototype.getPlayers = function (team) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _this = this;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve) {
+                        var subscription = _this.apollo.watchQuery({
+                            query: graphql_tag__WEBPACK_IMPORTED_MODULE_2___default()(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n          {\n            teamPlayers(id: ", ") {\n            id\n            name\n            player_img\n            class\n            ht_wt\n            home_town\n            dob\n            rbi\n          }\n          }\n        "], ["\n          {\n            teamPlayers(id: ", ") {\n            id\n            name\n            player_img\n            class\n            ht_wt\n            home_town\n            dob\n            rbi\n          }\n          }\n        "])), team.id)
+                        }).valueChanges.subscribe(function (result) {
+                            resolve(result.data.teamPlayers);
+                            subscription.unsubscribe();
+                        });
+                    })];
+            });
+        });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], ConferenceGraphComponent.prototype, "conference", void 0);
+    ConferenceGraphComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-conference-graph',
+            template: __webpack_require__(/*! ./conference-graph.component.html */ "./src/app/Components/conference-graph/conference-graph.component.html"),
+            styles: [__webpack_require__(/*! ./conference-graph.component.scss */ "./src/app/Components/conference-graph/conference-graph.component.scss")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [apollo_angular__WEBPACK_IMPORTED_MODULE_3__["Apollo"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]])
+    ], ConferenceGraphComponent);
+    return ConferenceGraphComponent;
+}());
+
+var templateObject_1;
+
+
+/***/ }),
+
 /***/ "./src/app/Components/loading/loading.component.html":
 /*!***********************************************************!*\
   !*** ./src/app/Components/loading/loading.component.html ***!
@@ -430,7 +560,7 @@ var CalculateRbiComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"padding-left: 100px; padding-right: 100px;\">\n  <div *ngIf=\"loading\" style=\"min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center;\">\n    <mat-spinner></mat-spinner>\n  </div>\n  <div *ngIf=\"conference\" style=\"width: 100%; display: inline-block; position: relative;\">\n    <div style=\"display: flex; flex-direction: row\">\n      <div style=\"width: 50%;\">\n        <h1>{{conference.name}}</h1><p>{{conference.nick_name}}</p>\n      </div>\n      <div>\n        <p>Founded: {{conference.founded}}</p>\n        <p>Number of members: {{conference.member_number}}</p>\n      </div>\n    </div>\n\n\n\n      <table mat-table [dataSource]=\"conference.teams\" class=\"container mat-elevation-z8\">\n\n        <!--- Note that these columns can be defined in any order.\n              The actual rendered columns are set as a property on the row definition\" -->\n\n        <ng-container matColumnDef=\"image\">\n          <th mat-header-cell *matHeaderCellDef> Picture </th>\n          <td mat-cell *matCellDef=\"let element\"> <img style=\"height: 100px\" src=\"{{element.team_img}}\"/> </td>\n        </ng-container>\n\n        <!-- Name Column -->\n        <ng-container matColumnDef=\"name\">\n          <th mat-header-cell *matHeaderCellDef> Name </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n        </ng-container>\n\n        <!-- RBI -->\n        <ng-container matColumnDef=\"university_name\">\n          <th mat-header-cell *matHeaderCellDef> University </th>\n          <td mat-cell *matCellDef=\"let element\"> {{element.university_name}} </td>\n        </ng-container>\n\n        <ng-container matColumnDef=\"action\">\n          <th mat-header-cell *matHeaderCellDef> Action</th>\n          <td mat-cell *matCellDef=\"let element\"><a routerLink=\"/team/{{element.id}}\">Details</a>  </td>\n        </ng-container>\n\n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n      </table>\n\n  </div>\n</div>\n\n"
+module.exports = "<div style=\"padding-left: 100px; padding-right: 100px; margin: 50px;\">\n  <div *ngIf=\"loading\" style=\"min-height: 500px; display: flex; flex-direction: column; justify-content: center; align-items: center;\">\n    <mat-spinner></mat-spinner>\n  </div>\n  <div *ngIf=\"conference\" style=\"width: 100%; display: inline-block; position: relative;\">\n    <div style=\"display: flex; flex-direction: row\">\n      <div style=\"width: 50%;\">\n        <h1>{{conference.name}}</h1><p>{{conference.nick_name}}</p>\n      </div>\n      <div>\n        <p>Founded: {{conference.founded}}</p>\n        <p>Number of members: {{conference.member_number}}</p>\n      </div>\n    </div>\n\n    <div class=\"container\">\n      <div>\n        <div class=\"row\">\n          <p>Graph</p>\n          <button mat-raised-button *ngIf=\"!showGraph\" (click)=\"showGraph=true\">Show Graph</button>\n          <button mat-raised-button *ngIf=\"showGraph\" (click)=\"showGraph=false\">Close</button>\n        </div>\n\n        <app-conference-graph *ngIf=\"showGraph\" [conference]=\"conference\"></app-conference-graph>\n      </div>\n    </div>\n\n    <div class=\"container\">\n      <div>\n        <div class=\"row\">\n          <p>Teams: </p>\n          <button *ngIf=\"!showTeam\" (click)=\"showTeam=true\">Show All</button>\n          <button *ngIf=\"showTeam\" (click)=\"showTeam=false\">Close</button>\n        </div>\n\n        <table mat-table *ngIf=\"showTeam\" [dataSource]=\"conference.teams\" style=\"width: 100%;\" class=\"mat-elevation-z8\">\n          <!--- Note that these columns can be defined in any order.\n                The actual rendered columns are set as a property on the row definition\" -->\n\n          <ng-container matColumnDef=\"image\">\n            <th mat-header-cell *matHeaderCellDef> Picture </th>\n            <td mat-cell *matCellDef=\"let element\"> <img style=\"height: 100px\" src=\"{{element.team_img}}\"/> </td>\n          </ng-container>\n\n          <!-- Name Column -->\n          <ng-container matColumnDef=\"name\">\n            <th mat-header-cell *matHeaderCellDef> Name </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.name}} </td>\n          </ng-container>\n\n          <!-- RBI -->\n          <ng-container matColumnDef=\"university_name\">\n            <th mat-header-cell *matHeaderCellDef> University </th>\n            <td mat-cell *matCellDef=\"let element\"> {{element.university_name}} </td>\n          </ng-container>\n\n          <ng-container matColumnDef=\"action\">\n            <th mat-header-cell *matHeaderCellDef> Action</th>\n            <td mat-cell *matCellDef=\"let element\"><a routerLink=\"/team/{{element.id}}\">Details</a>  </td>\n          </ng-container>\n\n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n        </table>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -441,7 +571,7 @@ module.exports = "<div style=\"padding-left: 100px; padding-right: 100px;\">\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  width: 80%;\n  overflow: auto;\n  text-align: center;\n  align-content: center;\n  margin-top: 50px;\n  margin-left: auto;\n  margin-right: auto; }\n\n.mat-header-cell {\n  text-align: center; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2h1eWVuL1dvcmtzcGFjZXMvdHR1L1JCSS1mcm9udC1lbmQvc3JjL2FwcC9QYWdlcy9jb25mZXJlbmNlLXBhZ2UvY29uZmVyZW5jZS1wYWdlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsVUFBUztFQUNULGNBQWM7RUFDZCxrQkFBaUI7RUFDakIscUJBQXFCO0VBQ3JCLGdCQUFnQjtFQUNoQixpQkFBZ0I7RUFDaEIsa0JBQWlCLEVBQUE7O0FBRW5CO0VBQ0Usa0JBQWlCLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9QYWdlcy9jb25mZXJlbmNlLXBhZ2UvY29uZmVyZW5jZS1wYWdlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lciB7XG4gIHdpZHRoOjgwJTtcbiAgb3ZlcmZsb3c6IGF1dG87XG4gIHRleHQtYWxpZ246Y2VudGVyO1xuICBhbGlnbi1jb250ZW50OiBjZW50ZXI7XG4gIG1hcmdpbi10b3A6IDUwcHg7XG4gIG1hcmdpbi1sZWZ0OmF1dG87XG4gIG1hcmdpbi1yaWdodDphdXRvO1xufVxuLm1hdC1oZWFkZXItY2VsbCB7XG4gIHRleHQtYWxpZ246Y2VudGVyO1xufVxuIl19 */"
+module.exports = ".container {\n  width: 100%;\n  align-content: center;\n  margin-top: 50px; }\n\n.mat-header-cell {\n  text-align: center; }\n\n.row {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  background-color: #555555;\n  padding: 5px; }\n\n.row p {\n    color: #ffffff; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL2h1eWVuL1dvcmtzcGFjZXMvdHR1L1JCSS1mcm9udC1lbmQvc3JjL2FwcC9QYWdlcy9jb25mZXJlbmNlLXBhZ2UvY29uZmVyZW5jZS1wYWdlLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVztFQUNYLHFCQUFxQjtFQUNyQixnQkFBZ0IsRUFBQTs7QUFFbEI7RUFDRSxrQkFBaUIsRUFBQTs7QUFHbkI7RUFDRSxhQUFhO0VBQUUsbUJBQW1CO0VBQUUsOEJBQThCO0VBQ2xFLHlCQUF5QjtFQUN6QixZQUFZLEVBQUE7O0FBSGQ7SUFNSSxjQUFjLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9QYWdlcy9jb25mZXJlbmNlLXBhZ2UvY29uZmVyZW5jZS1wYWdlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lciB7XG4gIHdpZHRoOiAxMDAlO1xuICBhbGlnbi1jb250ZW50OiBjZW50ZXI7XG4gIG1hcmdpbi10b3A6IDUwcHg7XG59XG4ubWF0LWhlYWRlci1jZWxsIHtcbiAgdGV4dC1hbGlnbjpjZW50ZXI7XG59XG5cbi5yb3cge1xuICBkaXNwbGF5OiBmbGV4OyBmbGV4LWRpcmVjdGlvbjogcm93OyBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIGJhY2tncm91bmQtY29sb3I6ICM1NTU1NTU7XG4gIHBhZGRpbmc6IDVweDtcblxuICBwIHtcbiAgICBjb2xvcjogI2ZmZmZmZjtcbiAgfVxufVxuIl19 */"
 
 /***/ }),
 
@@ -473,6 +603,8 @@ var ConferencePageComponent = /** @class */ (function () {
         this.apollo = apollo;
         this.mainCtrl = mainCtrl;
         this.route = route;
+        this.showTeam = true;
+        this.showGraph = true;
         this.loading = true;
         this.displayedColumns = ['image', 'name', 'university_name', 'action'];
     }
@@ -484,8 +616,8 @@ var ConferencePageComponent = /** @class */ (function () {
         this.route.params.subscribe(function (params) { return _this.subscription = _this.apollo.watchQuery({
             query: graphql_tag__WEBPACK_IMPORTED_MODULE_4___default()(templateObject_1 || (templateObject_1 = tslib__WEBPACK_IMPORTED_MODULE_0__["__makeTemplateObject"](["\n          {\n            conference(id: ", ") {\n              id\n              name\n              nick_name\n              founded\n              member_number\n              teams {\n                id\n                name\n                university_name\n                team_img\n              }\n            }\n          }\n        "], ["\n          {\n            conference(id: ", ") {\n              id\n              name\n              nick_name\n              founded\n              member_number\n              teams {\n                id\n                name\n                university_name\n                team_img\n              }\n            }\n          }\n        "])), params.id)
         }).valueChanges.subscribe(function (result) {
+            _this.loading = false;
             if (result.errors) {
-                _this.loading = false;
                 alert('Failed to fetch data');
             }
             _this.conference = result.data.conference;
@@ -1002,7 +1134,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"height: 100vh;\">\n  <mat-drawer-container style=\"height: 100%;\">\n    <mat-drawer [opened]=\"menuOpen\" mode=\"side\" style=\"height: 100%\">\n      <div style=\"display: flex; flex-direction: column; justify-content: center; align-items: center\">\n        <button mat-button (click)=\"goToHome()\">\n          <img style=\"height: 80px; margin: 40px;\" src=\"http://images.performgroup.com/di/library/omnisport/d1/d9/ncaa-football-logo_1dtqtdoitpl9t1cqksvegay0r8.jpg\" />\n        </button>\n      </div>\n      <mat-nav-list>\n        <a mat-list-item routerLink=\"/top-players\">Top 10 players</a>\n        <a mat-list-item routerLink=\"/search\">Search</a>\n        <a mat-list-item routerLink=\"/calculate-rbi\">Manually Calculate RBI</a>\n        <a mat-list-item routerLink=\"/about-us\">About Us</a>\n      </mat-nav-list>\n    </mat-drawer>\n    <mat-drawer-content>\n      <div class=\"nav-bar\">\n        <button mat-button style=\"background-color: #fff; margin: 10px; color: #555555;\" (click)=\"toggleMenu()\">\n          <mat-icon>reorder</mat-icon>\n        </button>\n      </div>\n      <router-outlet></router-outlet>\n    </mat-drawer-content>\n  </mat-drawer-container>\n</div>\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"height: 100vh;\">\n  <mat-drawer-container style=\"height: 100%;\">\n    <mat-drawer [opened]=\"menuOpen\" mode=\"side\" style=\"height: 100%\">\n      <div style=\"display: flex; flex-direction: column; justify-content: center; align-items: center\">\n        <button mat-button (click)=\"goToHome()\">\n          <img style=\"height: 80px; margin: 40px;\" src=\"http://images.performgroup.com/di/library/omnisport/d1/d9/ncaa-football-logo_1dtqtdoitpl9t1cqksvegay0r8.jpg\" />\n        </button>\n      </div>\n      <mat-nav-list>\n        <a mat-list-item routerLink=\"/top-players\">Top 10 players</a>\n        <a mat-list-item routerLink=\"/search\">Search</a>\n        <a mat-list-item routerLink=\"/calculate-rbi\">Manually Calculate RBI</a>\n        <a mat-list-item routerLink=\"/about-us\">About Us</a>\n      </mat-nav-list>\n    </mat-drawer>\n    <mat-drawer-content>\n      <div class=\"nav-bar\">\n        <button mat-button style=\"background-color: #fff; margin: 10px; color: #555555;\" (click)=\"toggleMenu()\">\n          <mat-icon>reorder</mat-icon>\n        </button>\n      </div>\n      <div>\n        <app-conference-graph *ngIf=\"showGraph\"></app-conference-graph>\n      </div>\n      <router-outlet></router-outlet>\n    </mat-drawer-content>\n  </mat-drawer-container>\n</div>\n\n"
 
 /***/ }),
 
@@ -1042,6 +1174,20 @@ var AppComponent = /** @class */ (function () {
         this.toggleMenu = function () { return _this.menuOpen = !_this.menuOpen; };
         this.goToHome = function () { return _this.router.navigateByUrl('/main'); };
     }
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.subscription = this.router.events.subscribe(function (event) {
+            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_2__["NavigationEnd"] && event.url.indexOf('conference/') >= 0) {
+                _this.showGraph = true;
+            }
+            else {
+                _this.showGraph = false;
+            }
+        });
+    };
+    AppComponent.prototype.ngOnDestroy = function () {
+        this.subscription.unsubscribe();
+    };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
@@ -1090,6 +1236,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Pages_conference_page_conference_page_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./Pages/conference-page/conference-page.component */ "./src/app/Pages/conference-page/conference-page.component.ts");
 /* harmony import */ var _Pages_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./Pages/main-page/main-page.component */ "./src/app/Pages/main-page/main-page.component.ts");
 /* harmony import */ var _Pages_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./Pages/about-us/about-us.component */ "./src/app/Pages/about-us/about-us.component.ts");
+/* harmony import */ var _Components_conference_graph_conference_graph_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./Components/conference-graph/conference-graph.component */ "./src/app/Components/conference-graph/conference-graph.component.ts");
+/* harmony import */ var _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @swimlane/ngx-charts */ "./node_modules/@swimlane/ngx-charts/release/esm.js");
+
+
 
 
 
@@ -1122,7 +1272,7 @@ var appRoutes = [
     { path: 'team/:id', component: _Pages_team_page_team_page_component__WEBPACK_IMPORTED_MODULE_19__["TeamPageComponent"] },
     { path: 'conference/:id', component: _Pages_conference_page_conference_page_component__WEBPACK_IMPORTED_MODULE_20__["ConferencePageComponent"] },
     { path: 'about-us', component: _Pages_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_22__["AboutUsComponent"] },
-    { path: '', redirectTo: '/main', pathMatch: 'full' }
+    { path: '', redirectTo: '/about-us', pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -1142,6 +1292,7 @@ var AppModule = /** @class */ (function () {
                 _Pages_conference_page_conference_page_component__WEBPACK_IMPORTED_MODULE_20__["ConferencePageComponent"],
                 _Pages_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_21__["MainPageComponent"],
                 _Pages_about_us_about_us_component__WEBPACK_IMPORTED_MODULE_22__["AboutUsComponent"],
+                _Components_conference_graph_conference_graph_component__WEBPACK_IMPORTED_MODULE_23__["ConferenceGraphComponent"],
             ],
             entryComponents: [_Components_loading_loading_component__WEBPACK_IMPORTED_MODULE_17__["LoadingComponent"]],
             imports: [
@@ -1165,7 +1316,8 @@ var AppModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatProgressSpinnerModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatGridListModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"],
+                _swimlane_ngx_charts__WEBPACK_IMPORTED_MODULE_24__["NgxChartsModule"],
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
@@ -1200,6 +1352,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var uri = 'https://rbi-node.herokuapp.com/'; // <-- add the URL of the GraphQL server here
+// const uri = 'http://localhost:4000/'; // <-- add the URL of the GraphQL server here
 function createApollo(httpLink) {
     return {
         link: httpLink.create({ uri: uri }),
