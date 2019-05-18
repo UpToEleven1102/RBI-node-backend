@@ -448,7 +448,7 @@ var templateObject_1;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h3>\n  The A Team:\n  </h3>\n  <div class=\"section\">\n    <p><strong>Felix Perez</strong> - <a href=\"https://github.com/felixeperez\">github</a></p>\n    <p><strong>Isaac Simpson</strong> - <a href=\"#\">github</a></p>\n    <p><strong>Zachary Simpson</strong> - <a href=\"#\">github</a></p>\n    <p><strong>Huyen Vu​</strong> - <a href=\"https://github.com/UpToEleven1102\">github</a></p>\n  </div>\n\n  <h3>\n    Our collaborator:\n  </h3>\n  <div class=\"section\">\n    <p><strong>Christian Melchiorre</strong> - <a href=\"https://github.com/Cmelchio\">github</a></p>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container\">\n  <h3>\n  The A Team:\n  </h3>\n  <div class=\"section\">\n    <p><strong>Huyen Vu​</strong> - <a href=\"https://github.com/UpToEleven1102\">github</a></p>\n    <p><strong>Christian Melchiorre</strong> - <a href=\"https://github.com/Cmelchio\">github</a></p>\n    <p><strong>Isaac Simpson</strong> - <a href=\"#\">github</a></p>\n    <p><strong>Zachary Simpson</strong> - <a href=\"#\">github</a></p>\n  </div>\n</div>\n"
 
 /***/ }),
 
